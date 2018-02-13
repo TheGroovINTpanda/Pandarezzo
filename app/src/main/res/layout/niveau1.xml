@@ -16,12 +16,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
     <ImageButton
-            android:id="@+id/DO-bulle"
-            android:layout_width="162dp"
-            android:layout_height="105dp"
-            android:src="@drawable/do_bulle" tools:layout_editor_absoluteY="314dp"
+            android:id="@+id/do_bulle"
+            android:layout_width="114dp"
+            android:layout_height="76dp"
+            android:src="@drawable/do_bulle" tools:layout_editor_absoluteY="347dp"
             android:scaleType="fitXY"
-            tools:layout_editor_absoluteX="90dp"/>
+            tools:layout_editor_absoluteX="135dp"/>
+
+    fx
 
 
 </android.support.constraint.ConstraintLayout>

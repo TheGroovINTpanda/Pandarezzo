@@ -3,8 +3,8 @@ package com.example.samuel.pandarezzo;
 public class Bouton {
 
     String name;
-    //visuel
-    //position
+    //visuel : Voir xml
+    //position : Voir xml
     Son son;
     Note note;
 
