@@ -9,8 +9,7 @@
 .externalNativeBuild
 
 .idea/*
-.idea/misc.xml
-
+.idea/workspace.xml
 
 # Built application files
 *.apk
