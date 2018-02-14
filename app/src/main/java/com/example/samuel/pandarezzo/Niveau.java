@@ -1,13 +1,34 @@
 package com.example.samuel.pandarezzo;
 
-public abstract class Niveau {
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-    String name;
+public abstract class Niveau extends Activity {
+
+    private String name;
     //background;
-    Portee portee;
-    Bouton[] boutons;
-    int Score;
-    Panda panda;
+    private Portee portee;
+    private Bouton[] boutons;
+    private int Score;
+    private Panda panda;
+
+    private ImageButton dO;
+
+    public Niveau(String name) {
+
+        dO = (ImageButton) findViewById(R.id.do_bulle);
+        dO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = (TextView) findViewById(R.id.textView2);
+                textView.setText("BLOP");
+            }
+        });
+    }
 
     public abstract void update();
 

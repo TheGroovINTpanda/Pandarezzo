@@ -2,11 +2,11 @@ package com.example.samuel.pandarezzo;
 
 public class Bouton {
 
-    String name;
+    private String name;
     //visuel : Voir xml
     //position : Voir xml
-    Son son;
-    Note note;
+    private Son son;
+    private Note note;
 
     public void clic(){
 
