@@ -1,8 +1,8 @@
-package com.example.samuel.pandarezzo;
+package com.redpanda.pandarezzo;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

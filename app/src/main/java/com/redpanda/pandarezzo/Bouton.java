@@ -1,17 +1,18 @@
-package com.example.samuel.pandarezzo;
+package com.redpanda.pandarezzo;
 
 public class Bouton {
 
-    private String name;
+    String name;
     //visuel : Voir xml
     //position : Voir xml
-    private Son son;
-    private Note note;
+    Son son;
+    Son son2gi;
+    Note note;
 
     public void clic(){
 
     }
-
+//commentaire plus détaillé
     @Override
     public String toString() { return name;    }
 }

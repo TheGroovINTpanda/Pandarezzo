@@ -1,13 +1,7 @@
-package com.example.samuel.pandarezzo.niveaux;
-
-import com.example.samuel.pandarezzo.Niveau;
+package com.redpanda.pandarezzo.niveaux;
+import com.redpanda.pandarezzo.Niveau;
 
 public class Niveau1 extends Niveau {
-
-    public Niveau1(String name){
-        super(name);
-    }
-
     @Override
     public void update() {
 
