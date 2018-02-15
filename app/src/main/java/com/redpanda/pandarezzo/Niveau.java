@@ -13,11 +13,6 @@ public abstract class Niveau extends Activity{
     private int Score;
     private Panda panda;
 
-    public Niveau(String name){
-        this.name=name;
-    }
-
-
     public abstract void update();
 
     public abstract void setScore();
