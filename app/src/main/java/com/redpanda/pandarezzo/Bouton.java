@@ -1,6 +1,6 @@
 package com.redpanda.pandarezzo;
 
-public class Bouton {
+public class    Bouton {
 
     String name;
     //visuel : Voir xml

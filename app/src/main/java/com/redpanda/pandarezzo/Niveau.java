@@ -1,13 +1,22 @@
 package com.redpanda.pandarezzo;
 
-public abstract class Niveau {
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 
-    String name;
+public abstract class Niveau extends Activity{
+
+    private String name;
     //background;
-    Portee portee;
-    Bouton[] boutons;
-    int Score;
-    Panda panda;
+    private Portee portee;
+    private Bouton[] boutons;
+    private int Score;
+    private Panda panda;
+
+    public Niveau(String name){
+        this.name=name;
+    }
+
 
     public abstract void update();
 
