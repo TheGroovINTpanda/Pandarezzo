@@ -1,6 +1,6 @@
 package com.redpanda.pandarezzo;
 
-public class    Bouton {
+public class Bouton {
 
     String name;
     //visuel : Voir xml
@@ -9,10 +9,13 @@ public class    Bouton {
     Son son2gi;
     Note note;
 
-    public void clic(){
+    public void clic() {
 
     }
-//commentaire plus détaillé
+
+    //commentaire plus détaillé
     @Override
-    public String toString() { return name;    }
+    public String toString() {
+        return name;
+    }
 }
