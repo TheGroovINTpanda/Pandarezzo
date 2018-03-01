@@ -5,13 +5,12 @@ import android.content.Context;
 import android.media.MediaPlayer;
 
 public class Son {
-    private Note note;
-    Son(Note n){
-        note=n;
+    private Bouton bouton;
+    Son(Bouton b){
+        bouton=b;
     }
     void play(){
-        MediaPlayer son = MediaPlayer.create(getApplicationcontext(),res.notes.note.getName()); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
-//        Ce fichier n'existe pas encore donc forcemment il y a des erreurs
+        MediaPlayer son = MediaPlayer.create(getApplicationcontext(),res.notes.bouton.name); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
         son.start();
         son.setOnCompletionListener(new OnCompletionListener()
         {
@@ -22,6 +21,6 @@ public class Son {
             }
         });
     }
-    //**Cette methode permet de jouer le son de la note, elle sera activé dès que l'utilisateur apuyera sur le bouton, la methode est instencier pour libérer la ressource ès que le fichier joué est terminé.
+    //**Cette methode permet de jouer le son de la note, elle sera activé dès que l'utilisateur apuyera sur le bouton, la methode est instencier pour libérer la ressource dès que le fichier joué est terminé.
 
 }
