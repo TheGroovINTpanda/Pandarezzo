@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.redpanda.pandarezzo.Niveau;
 import com.redpanda.pandarezzo.R;
+import com.redpanda.pandarezzo.Son;
 
 public class Niveau1 extends Niveau {
 
@@ -28,17 +29,12 @@ public class Niveau1 extends Niveau {
         ImageButton la = (ImageButton) findViewById(R.id.la_bulle);
         ImageButton si = (ImageButton) findViewById(R.id.si_bulle);
 
+        final Son doSon = new Son(getApplicationContext(),R.raw.d0);
+
         d0.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                MediaPlayer son = MediaPlayer.create(getApplicationContext(), R.raw.d0);//res.notes.bouton.name); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
-                son.start();
-                son.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        mediaPlayer.release();
-                    }
-                });
+               doSon.play();
                 TextView textView = (TextView) findViewById(R.id.textViewDebug);
                 textView.setText("Do");
                 return false;
