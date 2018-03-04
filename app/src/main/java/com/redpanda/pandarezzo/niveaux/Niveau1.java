@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.redpanda.pandarezzo.Bouton;
 import com.redpanda.pandarezzo.Niveau;
 import com.redpanda.pandarezzo.R;
 import com.redpanda.pandarezzo.Son;
@@ -21,7 +22,7 @@ public class Niveau1 extends Niveau {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
 
-        ImageButton d0 = (ImageButton) findViewById(R.id.do_bulle);
+//        ImageButton d0 = (ImageButton) findViewById(R.id.do_bulle);
         ImageButton re = (ImageButton) findViewById(R.id.re_bulle);
         ImageButton mi = (ImageButton) findViewById(R.id.mi_bulle);
         ImageButton fa = (ImageButton) findViewById(R.id.fa_bulle);
@@ -29,23 +30,28 @@ public class Niveau1 extends Niveau {
         ImageButton la = (ImageButton) findViewById(R.id.la_bulle);
         ImageButton si = (ImageButton) findViewById(R.id.si_bulle);
 
-        final Son doSon = new Son(getApplicationContext(),R.raw.d0);
+//        final Son doSon = new Son(getApplicationContext(),R.raw.d0);
+//
+//        d0.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//               doSon.play();
+//                TextView textView = (TextView) findViewById(R.id.textViewDebug);
+//                textView.setText("Do");
+//                return false;
+//            }
+//        });
 
-        d0.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-               doSon.play();
-                TextView textView = (TextView) findViewById(R.id.textViewDebug);
-                textView.setText("Do");
-                return false;
-            }
-        });
+        Bouton d0 = new Bouton("Do", this, getApplicationContext(), R.id.do_bulle, R.raw.d0);
+
+//        d0.onTouchListener.onTouch()
 
         re.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 TextView textView = (TextView) findViewById(R.id.textViewDebug);
                 textView.setText("Ré");
+                System.out.println("Ré");
                 return false;
             }
         });

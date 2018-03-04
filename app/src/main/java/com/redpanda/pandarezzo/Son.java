@@ -1,18 +1,17 @@
 package com.redpanda.pandarezzo;
 
 import android.content.Context;
-import android.content.Context;
 import android.media.MediaPlayer;
 
 public class Son {
     private Context context;
-    private int refNote;
+    private int sonRef;
 
-    /** Classe permettant de jouer le son d'une note donnée en paramètre grace à la méthode play */
+    /** Permet de jouer le son d'une note donnée en paramètre grace à la méthode play */
 
-    public Son(Context context, int refNote) {
+    public Son(Context context, int sonRef) {
         this.context = context;
-        this.refNote = refNote;
+        this.sonRef = sonRef;
     }
 
     /**Cette methode permet de jouer le son de la note, elle sera activé dès que l'utilisateur apuyera sur le bouton,
