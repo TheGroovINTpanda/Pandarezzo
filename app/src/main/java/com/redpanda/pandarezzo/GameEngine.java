@@ -11,13 +11,8 @@ public class GameEngine extends View {
 
     //Stylo graphique pour afficher la note
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
-    /*
-    TODO: mettre dans le drawable les différentes notes de musique qu'on déplacera (ici j'ai mis
-     le do_bulle mais ce n'est pas le bon, c'était juste pour que mon code compile, il va
-     falloir voir ca avec le graphisme ^^
-     */
 
-    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.do_bulle);
+    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire);
 
     //position actuelle de la note
     private int xNote;
