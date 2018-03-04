@@ -1,6 +1,7 @@
 package com.redpanda.pandarezzo.niveaux;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,6 +31,14 @@ public class Niveau1 extends Niveau {
         d0.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                MediaPlayer son = MediaPlayer.create(getApplicationContext(), R.raw.d0);//res.notes.bouton.name); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
+                son.start();
+                son.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                    }
+                });
                 TextView textView = (TextView) findViewById(R.id.textViewDebug);
                 textView.setText("Do");
                 return false;
