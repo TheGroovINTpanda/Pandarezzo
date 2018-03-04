@@ -21,7 +21,7 @@ public class Son {
 
 
     public void play() {
-        MediaPlayer son = MediaPlayer.create(context, R.raw.d0);//res.notes.bouton.name); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
+        MediaPlayer son = MediaPlayer.create(context, sonRef);//res.notes.bouton.name); //** On créer une instance de MediaPlayer a partir du fichier audio correspondant à la note se trouvant dans les ressources
         son.start();
         son.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
