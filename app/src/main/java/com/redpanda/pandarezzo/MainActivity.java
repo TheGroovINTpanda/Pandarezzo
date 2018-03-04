@@ -36,4 +36,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //à chaque fois que la fenêtre passe en avant plan
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    //à chaque fois que la fenêtre passe en arrière plan
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 }
