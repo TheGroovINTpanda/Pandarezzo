@@ -89,15 +89,15 @@
     <ImageButton
         android:id="@+id/do_bulle"
         android:layout_width="114dp"
-        android:layout_height="76dp"
+        android:layout_height="78dp"
         android:scaleType="fitXY"
         android:src="@drawable/do_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintHorizontal_bias="0.848"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <!--<ImageButton-->
         <!--android:id="@+id/redpanda"-->
@@ -124,10 +124,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <view
+        android:id="@+id/fa.niveau1"
         class="com.redpanda.pandarezzo.GameEngine"
         id="@+id/view4"
-        android:layout_width="220dp"
-        android:layout_height="235dp"
+        android:layout_width="218dp"
+        android:layout_height="239dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 

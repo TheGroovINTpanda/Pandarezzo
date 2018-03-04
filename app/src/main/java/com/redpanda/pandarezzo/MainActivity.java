@@ -13,11 +13,14 @@ import com.redpanda.pandarezzo.niveaux.Niveau1;
 
 public class MainActivity extends AppCompatActivity {
 
+    private GameEngine gameEngine;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
+        gameEngine=(GameEngine) findViewById(R.id.fa_niveau1);
 
         Button button = (Button) findViewById(R.id.buttonstart);
 
