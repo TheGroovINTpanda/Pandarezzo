@@ -49,4 +49,8 @@ public class GameEngine extends View {
         //pour actualiser au niveau de l'activity
         this.invalidate();
     }
+
+    public Note getNote() {
+        return note;
+    }
 }
