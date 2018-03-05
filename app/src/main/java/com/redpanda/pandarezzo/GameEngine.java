@@ -22,8 +22,9 @@ public class GameEngine extends View {
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Context context){
+    public GameEngine(Context context,Note note){
         super(context);
+        this.note=note;
     }
 
     public void onDraw(Canvas canvas){
