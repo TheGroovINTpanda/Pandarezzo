@@ -12,11 +12,8 @@ public class GameEngine extends View {
     //Stylo graphique pour afficher la note
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire);
 
-    //position actuelle de la note
-    private int xNote;
-    private int yNote;
+    private Note note;
 
     private int largeurimage;
     private int longueurimage;
@@ -31,22 +28,22 @@ public class GameEngine extends View {
 
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        canvas.drawBitmap(notebitmap,xNote,yNote,paint);
+        canvas.drawBitmap(note.getNotebitmap(),note.getX(),note.getY(),paint);
     }
     public void moveImage(int x,int y){
-        xNote=xNote+x;
-        yNote=yNote+y;
-        if(xNote<0){
-            xNote=0;
+        note.setX(note.getX()+x);
+        note.setY(note.getY()+y);
+        if(note.getX()<0){
+            note.setY(0);
         }
-        else if(xNote+largeurimage>getWidth()){
-            xNote=getWidth()-largeurimage;
+        else if(note.getX()+largeurimage>getWidth()){
+            note.setX(getWidth()-largeurimage);
         }
-        if(yNote<0){
-            yNote=0;
+        if(note.getY()<0){
+            note.setY(0);
         }
-        else if(yNote+longueurimage>getHeight()){
-            yNote=getHeight()-longueurimage;
+        else if(note.getY()+longueurimage>getHeight()){
+            note.setY(getHeight()-longueurimage);
         }
         //pour actualiser au niveau de l'activity
         this.invalidate();
