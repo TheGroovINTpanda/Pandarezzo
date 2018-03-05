@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    //à chaque fois que la fenêtre passe en arrière plan
+    //à chaque fois qu'on quitte l'avant plan
     @Override
     protected void onPause() {
         super.onPause();

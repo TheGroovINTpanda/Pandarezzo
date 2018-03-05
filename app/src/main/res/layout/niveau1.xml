@@ -127,8 +127,8 @@
         android:id="@+id/fa.niveau1"
         class="com.redpanda.pandarezzo.GameEngine"
         id="@+id/view4"
-        android:layout_width="218dp"
-        android:layout_height="239dp"
+        android:layout_width="251dp"
+        android:layout_height="233dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
