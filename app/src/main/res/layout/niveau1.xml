@@ -131,5 +131,14 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="25dp" />
 
+    <view
+        android:id="@+id/notesniveau1"
+        class="com.redpanda.pandarezzo.GameEngine"
+        id="@+id/view5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </android.support.constraint.ConstraintLayout>
 

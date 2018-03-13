@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
-        //gameEngine=(GameEngine) findViewById(R.id.ni);
+        gameEngine=(GameEngine) findViewById(R.id.notesniveau1);
         Button button = (Button) findViewById(R.id.buttonstart);
 
         button.setOnTouchListener(new View.OnTouchListener() {
