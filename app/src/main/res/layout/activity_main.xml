@@ -8,22 +8,32 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="194dp"
+        android:layout_height="39dp"
         android:text="Hello Red Panda!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/redDark"
+        android:textSize="25dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="29dp" />
+
     <Button
         android:id="@+id/buttonstart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
-        app:layout_constraintBottom_toBottomOf="@id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="398dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="318dp"
+        android:layout_height="464dp"
+        android:src="@drawable/panda_deux_bras_leves"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="23dp" />
+
 
 
 </android.support.constraint.ConstraintLayout>
