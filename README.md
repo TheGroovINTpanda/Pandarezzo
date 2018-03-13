@@ -10,4 +10,4 @@
 #	- Son
 #	- GameEngine
 #	- Portee
-# Version de SDK : API 22 (android 5.1)
+# Version de SDK : API 26

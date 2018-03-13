@@ -1,12 +1,16 @@
 package com.redpanda.pandarezzo;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
@@ -27,22 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
-        //Je ne sais pas pourquoi en nommant la variable do, ca ne compile plus
         //TODO fix les positions des notes
-        Note notedo=new Note("do",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.do_noire));
-        doEngine=new GameEngine(getApplicationContext(),notedo);
-        Note re=new Note("re",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.re_noire));
-        reEngine=new GameEngine(getApplicationContext(),re);
-        Note mi=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.mi_noire));
-        miEngine=new GameEngine(getApplicationContext(),mi);
-        Note fa=new Note("fa",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire));
-        faEngine=new GameEngine(getApplicationContext(),fa);
-        Note sol=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.sol_noire));
-        solEngine=new GameEngine(getApplicationContext(),sol);
-        Note la=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.la_noire));
-        laEngine=new GameEngine(getApplicationContext(),la);
-        Note si=new Note("si",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.si_noire));
-        siEngine=new GameEngine(getApplicationContext(),si);
 
         Button button = (Button) findViewById(R.id.buttonstart);
 
@@ -57,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+//        LinearLayout linearLayout = new LinearLayout(this);
+//        linearLayout.addView(findViewById(R.id.buttonstart));
+//        ImageView note = new ImageView(this);
+//        note.setImageResource(R.drawable.la_noire);
+//        linearLayout.addView(note);
+//        linearLayout.addView(note);
+//        setContentView(linearLayout);
+//                setContentView(note);
     }
 
     //à chaque fois que la fenêtre passe en avant plan

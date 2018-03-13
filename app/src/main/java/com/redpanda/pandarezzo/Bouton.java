@@ -2,6 +2,7 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -37,8 +38,19 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
         imageButton = (ImageButton) activity.findViewById(buttonRef);
         son = new Son(context, sonRef);
 
-        imageButton.setOnTouchListener(new View.OnTouchListener() {
-
+//        imageButton.setOnKeyListener(new View.OnKeyListener() {
+//
+//            @Override
+//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+//                son.play();
+//                System.out.print(name);
+//                TextView textView = (TextView) activity.findViewById(R.id.textViewDebug);
+//                textView.setText(name);
+//                return true;
+//            }
+//        });
+//        TODO résoudre problème du double appuis avec le setKey
+        imageButton.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 son.play();

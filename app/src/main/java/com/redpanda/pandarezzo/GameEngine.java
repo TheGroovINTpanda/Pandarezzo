@@ -18,7 +18,7 @@ public class GameEngine extends View {
     private int largeurimage;
     private int longueurimage;
 
-    /*
+    /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
@@ -29,7 +29,7 @@ public class GameEngine extends View {
 
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        canvas.drawBitmap(note.getNotebitmap(),note.getX(),note.getY(),paint);
+//        canvas.drawBitmap(note.getNotebitmap(),note.getX(),note.getY(),paint);
     }
     public void moveImage(int x,int y){
         note.setX(note.getX()+x);
