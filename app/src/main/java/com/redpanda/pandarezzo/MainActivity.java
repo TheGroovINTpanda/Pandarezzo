@@ -18,20 +18,13 @@ import com.redpanda.pandarezzo.niveaux.Niveau1;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GameEngine doEngine;
-    private GameEngine reEngine;
-    private GameEngine miEngine;
-    private GameEngine faEngine;
-    private GameEngine solEngine;
-    private GameEngine laEngine;
-    private GameEngine siEngine;
+    private GameEngine gameEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
-        //TODO fix les positions des notes
 
         Button button = (Button) findViewById(R.id.buttonstart);
 
