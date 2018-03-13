@@ -14,36 +14,14 @@ import com.redpanda.pandarezzo.niveaux.Niveau1;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GameEngine doEngine;
-    private GameEngine reEngine;
-    private GameEngine miEngine;
-    private GameEngine faEngine;
-    private GameEngine solEngine;
-    private GameEngine laEngine;
-    private GameEngine siEngine;
+    private GameEngine gameEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
-        //Je ne sais pas pourquoi en nommant la variable do, ca ne compile plus
-        //TODO fix les positions des notes
-        Note notedo=new Note("do",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.do_noire));
-        doEngine=new GameEngine(getApplicationContext(),notedo);
-        Note re=new Note("re",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.re_noire));
-        reEngine=new GameEngine(getApplicationContext(),re);
-        Note mi=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.mi_noire));
-        miEngine=new GameEngine(getApplicationContext(),mi);
-        Note fa=new Note("fa",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire));
-        faEngine=new GameEngine(getApplicationContext(),fa);
-        Note sol=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.sol_noire));
-        solEngine=new GameEngine(getApplicationContext(),sol);
-        Note la=new Note("mi",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.la_noire));
-        laEngine=new GameEngine(getApplicationContext(),la);
-        Note si=new Note("si",0,0, BitmapFactory.decodeResource(getResources(),R.drawable.si_noire));
-        siEngine=new GameEngine(getApplicationContext(),si);
-
+        //gameEngine=(GameEngine) findViewById(R.id.ni);
         Button button = (Button) findViewById(R.id.buttonstart);
 
         button.setOnTouchListener(new View.OnTouchListener() {

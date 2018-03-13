@@ -8,49 +8,49 @@ import android.graphics.Paint;
 import android.view.View;
 
 public class GameEngine extends View {
-
+    
+    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire);
     //Stylo graphique pour afficher la note
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
-
-
-    private Note note;
-
     private int largeurimage;
     private int longueurimage;
+
+    //position actuelle de la note
+    int xNote;
+    int yNote;
 
     /*
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Context context,Note note){
+    public GameEngine(Context context){
         super(context);
-        this.note=note;
+
     }
 
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        canvas.drawBitmap(note.getNotebitmap(),note.getX(),note.getY(),paint);
+        canvas.drawBitmap(notebitmap,xNote,yNote,paint);
     }
     public void moveImage(int x,int y){
-        note.setX(note.getX()+x);
-        note.setY(note.getY()+y);
-        if(note.getX()<0){
-            note.setY(0);
+        xNote=xNote+x;
+        yNote=yNote+y;
+        if(xNote<0){
+            xNote=0;
         }
-        else if(note.getX()+largeurimage>getWidth()){
-            note.setX(getWidth()-largeurimage);
+        else if(xNote+largeurimage>getWidth()){
+            xNote=getWidth()-largeurimage;
         }
-        if(note.getY()<0){
-            note.setY(0);
+        if(yNote<0){
+            yNote=0;
         }
-        else if(note.getY()+longueurimage>getHeight()){
-            note.setY(getHeight()-longueurimage);
+       else if(yNote+longueurimage>getHeight()){
+         yNote=getHeight()-longueurimage;
         }
         //pour actualiser au niveau de l'activity
         this.invalidate();
     }
 
-    public Note getNote() {
-        return note;
-    }
+
+
 }

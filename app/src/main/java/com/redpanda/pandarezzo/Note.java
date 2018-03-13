@@ -9,16 +9,14 @@ public class Note {
     private int y;
     private Bitmap notebitmap;
 
-    public Note(String name, int x, int y, Bitmap notebitmap){
+    public Note(String name, int x, int y){
         this.name=name;
         this.x=x;
         this.y=y;
-        this.notebitmap=notebitmap;
+
     }
 
-    public Bitmap getNotebitmap() {
-        return notebitmap;
-    }
+
 
     public int getX() {
         return x;
@@ -27,9 +25,7 @@ public class Note {
         return y;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+
 
     public void setY(int y) {
         this.y = y;
