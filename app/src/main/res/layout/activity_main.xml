@@ -24,13 +24,15 @@
 
     <Button
         android:id="@+id/buttonstart"
-        android:layout_width="209dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="92dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="0dp"
         android:fontFamily="@font/bd_cartoon_shout"
         android:text="Start"
         android:textColor="@color/rougeorange"
+        android:backgroundTint="@color/blanc"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
