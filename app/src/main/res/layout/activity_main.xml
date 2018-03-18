@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.redpanda.pandarezzo.MainActivity">
+    tools:context="com.redpanda.pandarezzo.MainActivity"
+    android:background="@drawable/ciel_menu">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="92dp"
+        android:layout_width="292dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
+        android:backgroundTint=""
+        android:fontFamily="@font/bd_cartoon_shout"
         android:text="Hello Red Panda!"
-        android:textColor="@color/redDark"
+        android:textColor="@color/rougeorange"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,11 +24,13 @@
 
     <Button
         android:id="@+id/buttonstart"
-        android:layout_width="wrap_content"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginStart="148dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="92dp"
+        android:fontFamily="@font/bd_cartoon_shout"
         android:text="Start"
+        android:textColor="@color/rougeorange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
@@ -33,9 +38,9 @@
     <ImageView
         android:id="@+id/pandaaccueil"
         android:layout_width="285dp"
-        android:layout_height="387dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="385dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/panda_deux_bras_leves" />

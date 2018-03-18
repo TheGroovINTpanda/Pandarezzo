@@ -3,8 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="rose">#FF4081</color>
-    <color name="rouge">#FF4038</color>
+    <color name="rougeorange">#FF4038</color>
+    <color name="rouge">#FF00</color>
     <color name="violetDark">#4C0099</color>
     <color name="redDark">#9900</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="noir">#000</color>
+    <color name="blanc">#FFF</color>
+    <color name="bleu">#0000FF</color>
+    <color name="bleufonce">#000080</color>
+
+
 </resources>
