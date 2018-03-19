@@ -50,14 +50,13 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
 //            }
 //        });
 //        TODO résoudre problème du double appuis avec le setKey
-        imageButton.setOnTouchListener(new OnTouchListener() {
+        imageButton.setOnClickListener(new OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public void onClick(View view) {
                 son.play();
                 System.out.print(name);
                 TextView textView = (TextView) activity.findViewById(R.id.textViewDebug);
                 textView.setText(name);
-                return false;
             }
         });
     }
