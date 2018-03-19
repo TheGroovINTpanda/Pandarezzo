@@ -13,5 +13,6 @@
     <color name="bleufonce">#000080</color>
     <color name="tomate">#FF6347</color>
     <color name="blanc_antique">#FAEBD7</color>
+    <color name="colorAccent">#FF4081</color>
 
 </resources>
