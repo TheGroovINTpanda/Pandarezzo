@@ -44,7 +44,7 @@
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/panda_deux_bras_leves" />
+        app:srcCompat="@drawable/panda_deux_bras_leves_resize" />
 
 
     <!--<ImageView-->
