@@ -18,6 +18,7 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
     private Note note;
     private Activity activity;
     private Context context;
+    private Boolean touched;
 
     private int buttonRef;
     private int sonRef;
@@ -29,16 +30,16 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
      * Le constructeur se charge d'instancier la note associé au bouton.
      */
 
-    public Bouton(final String name, final Activity activity,  int buttonRef, int sonRef) {
+    public Bouton(final String name, final Activity activity, final GameEngine engine, int buttonRef, int sonRef) {
         super(activity.getApplicationContext());
         this.name = name;
         this.context = activity.getApplicationContext();
         this.buttonRef = buttonRef;
         this.sonRef = sonRef;
         this.activity = activity;
-        imageButton = (ImageButton) activity.findViewById(buttonRef);
-        son = new Son(context, sonRef);
-
+        this.imageButton = (ImageButton) activity.findViewById(buttonRef);
+        this.son = new Son(context, sonRef);
+        this.engine = engine;
 //        imageButton.setOnKeyListener(new View.OnKeyListener() {
 //
 //            @Override
@@ -58,6 +59,8 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
                 System.out.print(name);
                 TextView textView = (TextView) activity.findViewById(R.id.textViewDebug);
                 textView.setText(name);
+                touched = true;
+                engine.touched();
                 return false;
             }
         });

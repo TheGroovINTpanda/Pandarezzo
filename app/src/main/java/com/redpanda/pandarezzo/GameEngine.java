@@ -28,10 +28,20 @@ public class GameEngine {
         this.notes = notes;
     }
 
+    /** Gére l'appuis sur un boutton. */
+
+    public void touched(){
+            notes.get(0).switchN(false);
+    }
+
+
+
     /** Replace et remet la textures noire de toutes les notes. */
 
     public void reInit(){
-
+        for(Note note : notes){
+            note.switchN(true);
+        }
     }
 
 }
