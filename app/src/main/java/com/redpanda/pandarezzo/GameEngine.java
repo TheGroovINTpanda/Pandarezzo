@@ -1,56 +1,68 @@
 package com.redpanda.pandarezzo;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class GameEngine extends View {
-    
-    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.fa_noire);
-    //Stylo graphique pour afficher la note
-    private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
-    private int largeurimage;
-    private int longueurimage;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Queue;
 
-    //position actuelle de la note
-    int xNote;
-    int yNote;
+public class GameEngine {
 
+    private Context context;
+
+    private ArrayList<Note> notes;
+
+    private ArrayList<Note> nextNotes;
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Context context){
-        super(context);
-
+    public GameEngine(Activity activity, ArrayList<Note> notes){
+        this.context= activity.getApplicationContext();
+        this.notes = notes;
+        this. nextNotes = new ArrayList<>() ;
     }
 
-    public void onDraw(Canvas canvas){
-        super.onDraw(canvas);
-        canvas.drawBitmap(notebitmap,xNote,yNote,paint);
-    }
-    public void moveImage(int x,int y){
-        xNote=xNote+x;
-        yNote=yNote+y;
-        if(xNote<0){
-            xNote=0;
-        }
-        else if(xNote+largeurimage>getWidth()){
-            xNote=getWidth()-largeurimage;
-        }
-        if(yNote<0){
-            yNote=0;
-        }
-       else if(yNote+longueurimage>getHeight()){
-         yNote=getHeight()-longueurimage;
-        }
-        //pour actualiser au niveau de l'activity
-        this.invalidate();
+    /** Gére l'appuis sur un boutton. */
+
+    public void touched(String bouton){
+            if(bouton.equals("La")){
+                nextNotes.get(0).switchN(false);
+//                nextNotes.remove(0);
+            }
+            else if(bouton.equals("Do")){
+                nextNotes.get(1).switchN(false);
+            }
+            else {
+                reInit();
+            }
     }
 
+    /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
 
+    public void setNextNote(Note note){
+        nextNotes.add(note);
+    }
+
+    /** Donne la prochaine note à jouer
+
+    /** Replace et remet la textures noire de toutes les notes. */
+
+    public void reInit(){
+        for(Note note : notes){
+            note.switchN(true);
+        }
+    }
 
 }
