@@ -18,6 +18,8 @@ public class Note {
     private int y;
     private int heigth;
     private int width;
+    //prochaine note à jouer
+    private Boolean isnextNote;
     //view associé à la note
     private ImageView noteView;
     //id de la valeur de la note
@@ -97,7 +99,11 @@ public class Note {
         return width;
     }
 
+    public Boolean getIsnextNote() { return isnextNote;}
+
     public void setX(int x) {this.x = x; }
 
     public void setY(int y) {this.y = y; }
+
+    public void setIsnextNote(Boolean isnextNote) { this.isnextNote = isnextNote;}
 }

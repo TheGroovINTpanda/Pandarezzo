@@ -130,6 +130,16 @@
         android:id="@+id/noteNoire"
         android:layout_width="127dp"
         android:layout_height="120dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noire" />
+
+    <ImageView
+        android:id="@+id/noteNoire2"
+        android:layout_width="127dp"
+        android:layout_height="120dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"

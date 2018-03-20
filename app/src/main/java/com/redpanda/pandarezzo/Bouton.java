@@ -60,7 +60,7 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
                 TextView textView = (TextView) activity.findViewById(R.id.textViewDebug);
                 textView.setText(name);
                 touched = true;
-                engine.touched();
+                engine.touched(name);
                 return false;
             }
         });
