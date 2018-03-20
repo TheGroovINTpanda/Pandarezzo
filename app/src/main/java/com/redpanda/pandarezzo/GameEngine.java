@@ -1,10 +1,13 @@
 package com.redpanda.pandarezzo;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import java.lang.reflect.Array;
@@ -20,11 +23,15 @@ public class GameEngine {
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Context context, ArrayList<Note> notes){
-        this.context= context;
+    public GameEngine(Activity activity, ArrayList<Note> notes){
+        this.context= activity.getApplicationContext();
         this.notes = notes;
     }
 
+    /** Replace et remet la textures noire de toutes les notes. */
 
+    public void reInit(){
+
+    }
 
 }

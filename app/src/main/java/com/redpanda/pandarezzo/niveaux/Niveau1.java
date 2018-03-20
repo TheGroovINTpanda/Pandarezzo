@@ -31,16 +31,16 @@ public class Niveau1 extends Niveau {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
 
-        Bouton d0 = new Bouton("Do", this, getApplicationContext(), R.id.do_bulle, R.raw.d0);
-        Bouton re = new Bouton("Ré", this, getApplicationContext(), R.id.re_bulle, R.raw.re);
-        Bouton mi = new Bouton("Mi", this, getApplicationContext(), R.id.mi_bulle, R.raw.mi);
-        Bouton fa = new Bouton("Fa", this, getApplicationContext(), R.id.fa_bulle, R.raw.fa);
-        Bouton sol= new Bouton("Sol", this, getApplicationContext(), R.id.sol_bulle, R.raw.sol);
-        Bouton la = new Bouton("La", this, getApplicationContext(), R.id.la_bulle, R.raw.la);
-        Bouton si = new Bouton("Si", this, getApplicationContext(), R.id.si_bulle, R.raw.si);
+        Bouton d0 = new Bouton("Do", this,  R.id.do_bulle, R.raw.d0);
+        Bouton re = new Bouton("Ré", this,  R.id.re_bulle, R.raw.re);
+        Bouton mi = new Bouton("Mi", this,  R.id.mi_bulle, R.raw.mi);
+        Bouton fa = new Bouton("Fa", this,  R.id.fa_bulle, R.raw.fa);
+        Bouton sol= new Bouton("Sol", this, R.id.sol_bulle, R.raw.sol);
+        Bouton la = new Bouton("La", this,  R.id.la_bulle, R.raw.la);
+        Bouton si = new Bouton("Si", this,  R.id.si_bulle, R.raw.si);
 
-        Note laNote = new Note("La", this, getApplicationContext(), R.id.noteNoire,R.drawable.la_noire);
-        laNote.switchN();
+        Note laNote = new Note("La", this,  R.id.noteNoire,R.drawable.la_noire);
+        laNote.switchN(false);
 
     }
 

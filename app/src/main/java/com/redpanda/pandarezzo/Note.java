@@ -26,12 +26,12 @@ public class Note {
     private Activity activity;
     private Context context;
 
-    public Note(String name, Activity activity, Context context, int id, int noteRef) {
+    public Note(String name, Activity activity, int id, int noteRef) {
         this.name = name;
         this.x = x;
         this.y = y;
         this.activity = activity;
-        this.context = context;
+        this.context = activity.getApplicationContext();
         this.noteView = activity.findViewById(id);
         this.refNote = noteRef;
         x = noteView.getLeft();
@@ -42,8 +42,12 @@ public class Note {
 
     /** Permet de passser d'une note noire à une note colorée. A appeler si le bouton apuyé est correct. */
 
-    public void switchN(){
-        noteView.setImageResource(refNote);
+    public void switchN(Boolean isPlayed){
+        if(isPlayed){
+            noteView.setImageResource(R.drawable.note_noire);
+        } else {
+            noteView.setImageResource(refNote);
+        }
     }
 
     /** Permet de déplacer une note.
