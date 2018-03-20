@@ -39,6 +39,8 @@ public class Niveau1 extends Niveau {
         Bouton la = new Bouton("La", this, getApplicationContext(), R.id.la_bulle, R.raw.la);
         Bouton si = new Bouton("Si", this, getApplicationContext(), R.id.si_bulle, R.raw.si);
 
+        Note laNote = new Note("La", 0,0, this, getApplicationContext(), R.id.noteNoire,R.drawable.la_noire);
+        laNote.switchN();
 
     }
 
