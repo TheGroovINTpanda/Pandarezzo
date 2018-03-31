@@ -31,8 +31,7 @@ public class Note {
 
     public Note(String name, Activity activity, int id, int noteRef) {
         this.name = name;
-        this.x = x;
-        this.y = y;
+//        this.setPosition(name);
         this.activity = activity;
         this.context = activity.getApplicationContext();
         this.noteView = activity.findViewById(id);
@@ -42,6 +41,51 @@ public class Note {
         heigth = noteView.getHeight();
         width = noteView.getWidth();
     }
+
+    // TODO Renseigner les positions pour chaque notes dans xNote et yNote.
+    public void setPosition(String name){
+        int xNote;
+        int yNode;
+        switch (name){
+            case "Do":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "Ré":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "Mi":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "Fa":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "Sol":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "La":
+                xNote = 0;
+                yNode = 0;
+                break;
+            case "Si":
+                xNote = 0;
+                yNode = 0;
+                break;
+            default:
+                xNote = 0;
+                yNode = 0;
+        }
+        setX(xNote);
+        noteView.setX(xNote);
+        setY(yNode);
+        noteView.setY(yNode);
+    }
+
+
     /** Permet de passser d'une note noire à une note colorée. A appeler si le bouton apuyé est correct. */
 
     public void switchColor(Boolean isPlayed){
