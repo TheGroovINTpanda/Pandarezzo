@@ -34,8 +34,14 @@ public class Niveau1 extends Niveau {
         setContentView(R.layout.niveau1);
 
         ArrayList<Note> notes = new ArrayList<>();
-        Note laNote = new Note("La", this,  R.id.noteNoire,R.drawable.la_noire);
-        Note doNote = new Note("Do", this, R.id.noteNoire2, R.drawable.do_noire);
+        Note doNote = new Note("Do", this, R.id.noteNoire, R.drawable.do_noire);
+        Note reNote = new Note("Ré", this, R.id.noteNoire1, R.drawable.re_noire);
+        Note miNote = new Note("Mi", this, R.id.noteNoire2, R.drawable.mi_noire);
+        Note faNote = new Note("Fa", this, R.id.noteNoire3, R.drawable.fa_noire);
+        Note solNote = new Note("Sal", this, R.id.noteNoire4, R.drawable.sol_noire);
+        Note laNote = new Note("La", this,  R.id.noteNoire5,R.drawable.la_noire);
+        Note siNote = new Note("Si", this,  R.id.noteNoire6,R.drawable.si_noire);
+        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
         notes.add(laNote);
         notes.add(doNote);
 

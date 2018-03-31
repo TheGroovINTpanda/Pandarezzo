@@ -44,7 +44,7 @@ public class Note {
 
     /** Permet de passser d'une note noire à une note colorée. A appeler si le bouton apuyé est correct. */
 
-    public void switchN(Boolean isPlayed){
+    public void switchColor(Boolean isPlayed){
         if(isPlayed){
             noteView.setImageResource(R.drawable.note_noire);
         } else {

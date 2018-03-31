@@ -38,11 +38,11 @@ public class GameEngine {
 
     public void touched(String bouton){
             if(bouton.equals("La")){
-                nextNotes.get(0).switchN(false);
+                nextNotes.get(0).switchColor(false);
 //                nextNotes.remove(0);
             }
             else if(bouton.equals("Do")){
-                nextNotes.get(1).switchN(false);
+                nextNotes.get(1).switchColor(false);
             }
             else {
                 reInit();
@@ -61,7 +61,7 @@ public class GameEngine {
 
     public void reInit(){
         for(Note note : notes){
-            note.switchN(true);
+            note.switchColor(true);
         }
     }
 
