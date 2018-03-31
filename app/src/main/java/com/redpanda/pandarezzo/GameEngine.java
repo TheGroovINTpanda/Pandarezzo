@@ -48,17 +48,49 @@ public class GameEngine {
     /** Gére l'appuis sur un boutton. */
 
     public void touched(String bouton){
-            if(bouton.equals("La")){
-                nextNotes.get(0).switchColor(false);
+        if(bouton.equals("Do")){
+            nextNotes.get(0).switchColor(false);
+        }
+        if(bouton.equals("La")){
+            nextNotes.get(0).switchColor(false);
 //                nextNotes.remove(0);
+        }
+
+        else {
+            reInit();
+        }
+    }
+
+    /**
+     *  Permet de créer une portée, il sufit de rentrer le nom des notes dans l'ordre souhaité
+     */
+
+    public void createStave(String[] notes){
+        for(String note : notes){
+            switch (note){
+                case "Do":
+                    setNextNote(this.notes.get(0));
+                    break;
+                case "Ré":
+                    setNextNote(this.notes.get(1));
+                    break;
+                case "Mi":
+                    setNextNote(this.notes.get(2));
+                    break;
+                case "Fa":
+                    setNextNote(this.notes.get(3));
+                    break;
+                case "Sol":
+                    setNextNote(this.notes.get(4));
+                    break;
+                case "La":
+                    setNextNote(this.notes.get(5));
+                    break;
+                case "Si":
+                    setNextNote(this.notes.get(6));
+                    break;
             }
-            else if(bouton.equals("Do")){
-                nextNotes.get(0).switchColor(false);
-                nextNotes.get(0).move(100,100);
-            }
-            else {
-                reInit();
-            }
+        }
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
