@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 TextView text = (TextView) findViewById(R.id.textView);
-                text.setText("Let's Rock !!");
+                text.setText("Wait a moment");
                 Intent intent = new Intent(MainActivity.this,
                         Niveau1.class);
                 startActivity(intent);

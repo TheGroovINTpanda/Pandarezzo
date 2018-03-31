@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Note {
     private String name;
@@ -74,6 +75,14 @@ public class Note {
 //        }
         noteView.setX(getX());
         noteView.setY(getY());
+    }
+    /** Permet de positionner une note au coordonnées (x,y) */
+
+    public void moveAbsolute(int x, int y){
+        this.setX(x);
+        this.setY(y);
+        noteView.setX(x);
+        noteView.setX(y);
     }
 
     public void init() {
