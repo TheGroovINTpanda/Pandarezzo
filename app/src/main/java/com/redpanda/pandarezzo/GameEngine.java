@@ -1,37 +1,48 @@
 package com.redpanda.pandarezzo;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Queue;
 
 public class GameEngine {
 
+    private Activity activity;
     private Context context;
-
     private ArrayList<Note> notes;
-
     private ArrayList<Note> nextNotes;
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Activity activity, ArrayList<Note> notes){
+    public GameEngine(Activity activity){
+        this.activity = activity;
         this.context= activity.getApplicationContext();
-        this.notes = notes;
+        this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
+    }
+
+    /** Méthode pour créer les notes à fournir au GameEngine */
+
+    public ArrayList<Note> createNotes(){
+        ArrayList<Note> notes = new ArrayList<>();
+        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire);
+        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire);
+        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire);
+        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire);
+        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire);
+        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire);
+        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire);
+
+        notes.add(doNote);
+        notes.add(reNote);
+        notes.add(miNote);
+        notes.add(faNote);
+        notes.add(solNote);
+        notes.add(laNote);
+        notes.add(siNote);
+
+        return notes;
     }
 
     /** Gére l'appuis sur un boutton. */

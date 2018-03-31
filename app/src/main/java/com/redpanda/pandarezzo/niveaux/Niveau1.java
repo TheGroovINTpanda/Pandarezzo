@@ -33,21 +33,11 @@ public class Niveau1 extends Niveau {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
 
-        ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = new Note("Do", this, R.id.noteNoire, R.drawable.do_noire);
-        Note reNote = new Note("Ré", this, R.id.noteNoire1, R.drawable.re_noire);
-        Note miNote = new Note("Mi", this, R.id.noteNoire2, R.drawable.mi_noire);
-        Note faNote = new Note("Fa", this, R.id.noteNoire3, R.drawable.fa_noire);
-        Note solNote = new Note("Sal", this, R.id.noteNoire4, R.drawable.sol_noire);
-        Note laNote = new Note("La", this,  R.id.noteNoire5,R.drawable.la_noire);
-        Note siNote = new Note("Si", this,  R.id.noteNoire6,R.drawable.si_noire);
-        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
-        notes.add(laNote);
-        notes.add(doNote);
+//        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
-        GameEngine engine = new GameEngine(this, notes);
-        engine.setNextNote(laNote);
-        engine.setNextNote(doNote);
+        GameEngine engine = new GameEngine(this);
+//        engine.setNextNote(laNote);
+//        engine.setNextNote(doNote);
 
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
         Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
