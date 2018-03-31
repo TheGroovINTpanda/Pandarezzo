@@ -93,6 +93,11 @@ public class Note {
 //        activity.setContentView(noteNoire);
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
     public int getX() {
         return x;
     }

@@ -11,6 +11,8 @@ public class GameEngine {
     private Context context;
     private ArrayList<Note> notes;
     private ArrayList<Note> nextNotes;
+    private int ip; //indice portée donnant l'avancée dans le morceau.
+
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
@@ -20,6 +22,7 @@ public class GameEngine {
         this.context= activity.getApplicationContext();
         this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
+        this.ip = 0;
     }
 
     /** Méthode pour créer les notes à fournir au GameEngine */
@@ -48,17 +51,34 @@ public class GameEngine {
     /** Gére l'appuis sur un boutton. */
 
     public void touched(String bouton){
-        if(bouton.equals("Do")){
-            nextNotes.get(0).switchColor(false);
+        if (ip<getNotes().size()){
+            if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
+                getNotes().get(0).switchColor(false);
+                ip++;
+            }else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
+                getNotes().get(1).switchColor(false);
+                ip++;
+            }else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
+                getNotes().get(2).switchColor(false);
+                ip++;
+            }else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
+                getNotes().get(3).switchColor(false);
+                ip++;
+            }else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
+                getNotes().get(4).switchColor(false);
+                ip++;
+            }else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
+                getNotes().get(5).switchColor(false);
+                ip++;
+            }
+            else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
+                getNotes().get(6).switchColor(false);
+                ip++;
+            } else {
+                reInit();
         }
-        if(bouton.equals("La")){
-            nextNotes.get(0).switchColor(false);
-//                nextNotes.remove(0);
         }
-
-        else {
-            reInit();
-        }
+        reInit();
     }
 
     /**
