@@ -36,7 +36,7 @@ public class Niveau1 extends Niveau {
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
         GameEngine engine = new GameEngine(this);
-//        engine.setNextNote(laNote);
+           engine.setNextNote(engine.getNotes().get(0));
 //        engine.setNextNote(doNote);
 
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);

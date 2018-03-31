@@ -41,7 +41,6 @@ public class Note {
         heigth = noteView.getHeight();
         width = noteView.getWidth();
     }
-
     /** Permet de passser d'une note noire à une note colorée. A appeler si le bouton apuyé est correct. */
 
     public void switchColor(Boolean isPlayed){
@@ -73,6 +72,8 @@ public class Note {
 //       else if(ythis+longueurimage>getHeight()){
 //         ythis=getHeight()-longueurimage;
 //        }
+        noteView.setX(getX());
+        noteView.setY(getY());
     }
 
     public void init() {

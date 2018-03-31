@@ -53,7 +53,8 @@ public class GameEngine {
 //                nextNotes.remove(0);
             }
             else if(bouton.equals("Do")){
-                nextNotes.get(1).switchColor(false);
+                nextNotes.get(0).switchColor(false);
+                nextNotes.get(0).move(100,100);
             }
             else {
                 reInit();
@@ -76,4 +77,19 @@ public class GameEngine {
         }
     }
 
+    public ArrayList<Note> getNotes() {
+        return notes;
+    }
+
+    public ArrayList<Note> getNextNotes() {
+        return nextNotes;
+    }
+
+    public void setNotes(ArrayList<Note> notes) {
+        this.notes = notes;
+    }
+
+    public void setNextNotes(ArrayList<Note> nextNotes) {
+        this.nextNotes = nextNotes;
+    }
 }
