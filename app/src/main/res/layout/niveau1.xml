@@ -117,14 +117,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewPortee"
+        android:id="@+id/imageViewPortee_resize"
         android:layout_width="425dp"
-        android:layout_height="95dp"
+        android:layout_height="91dp"
         android:layout_marginTop="8dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDebug"
-        app:srcCompat="@drawable/portee" />
+        app:srcCompat="@drawable/background_portee_resize" />
 
     <ImageView
         android:id="@+id/noteNoire"
