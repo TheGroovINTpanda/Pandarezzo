@@ -1,41 +1,33 @@
 package com.redpanda.pandarezzo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
+import android.widget.ImageView;
 
-public class Panda extends View {
-    private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
+public class Panda  {
+    private ImageView pandaView;
     private int xpanda;
     private int ypanda;
 
-    //TODO: Un drawable du panda
-    private Bitmap notebitmap= BitmapFactory.decodeResource(getResources(),R.drawable.redpanda);
 
-    public Panda(Context context){
-        super(context);
 
+    public Panda(Activity activity){
+        this.pandaView = activity.findViewById(R.id.panda_mignon);
     }
 
-    @Override
-    public void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if(animation()){
-            //TODO: un drawable du panda qui tire la langue (ou autre)
-            notebitmap=BitmapFactory.decodeResource(getResources(),R.drawable.redpanda);
+
+
+    public void animate(Boolean correct){
+        if(correct) {
+            pandaView.setImageResource(R.drawable.panda_deux_bras_leves_resize);
         }
-        canvas.drawBitmap(notebitmap,xpanda,ypanda,paint);
-
-    }
-
-    /*
-    TODO: réfléchir à un listener de Bouton pour savoir si la personne a bien répondu ou pas,
-    l'animation peut soit être un panda qui tire la langue ou un panda qui sautille
-     */
-    public boolean animation(){
-        return true;
+        else{
+            pandaView.setImageResource(R.drawable.pitit_panda_tout_mignon);
+        }
     }
 }
