@@ -12,6 +12,7 @@ public class GameEngine {
     private ArrayList<Note> notes;
     private ArrayList<Note> nextNotes;
     private int ip; //indice portée donnant l'avancée dans le morceau.
+    private Panda panda;
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -23,6 +24,7 @@ public class GameEngine {
         this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
         this.ip = 0;
+        this.panda=new Panda();
     }
 
     /** Méthode pour créer les notes à fournir au GameEngine */
@@ -73,12 +75,16 @@ public class GameEngine {
             } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
                 getNotes().get(6).switchColor(false);
                 ip++;
-            } else {
+            }
+            else {
                 System.out.print("Error");
                 reInit();
+                panda.animate(false);
             }
+            panda.animate(true);
         } else {
             reInit();
+            panda.animate(false);
         }
     }
 

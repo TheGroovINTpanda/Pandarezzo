@@ -16,12 +16,16 @@ public class Panda  {
 
 
     public Panda(){
+        pandaView.setImageResource(R.drawable.pitit_panda_tout_mignon);
     }
 
 
 
-    public void animate(Boolean isPlayed){
-        if(isPlayed) {
+    public void animate(Boolean correct){
+        if(correct) {
+            pandaView.setImageResource(R.drawable.panda_deux_bras_leves_resize);
+        }
+        else{
             pandaView.setImageResource(R.drawable.pitit_panda_tout_mignon);
         }
     }
