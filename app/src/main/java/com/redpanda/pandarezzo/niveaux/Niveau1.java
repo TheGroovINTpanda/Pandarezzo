@@ -32,16 +32,15 @@ public class Niveau1 extends Niveau {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
+//        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
-        ArrayList<Note> notes = new ArrayList<>();
-        Note laNote = new Note("La", this,  R.id.noteNoire1,R.drawable.la_noire);
-        Note doNote = new Note("Do", this, R.id.noteNoire, R.drawable.do_noire);
-        notes.add(laNote);
-        notes.add(doNote);
+        GameEngine engine = new GameEngine(this);
 
-        GameEngine engine = new GameEngine(this, notes);
-        engine.setNextNote(laNote);
-        engine.setNextNote(doNote);
+        /** Renseigner la portée de ce niveau dans level. */
+
+        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+
+        engine.createStave(level);
 
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
         Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);

@@ -1,52 +1,117 @@
 package com.redpanda.pandarezzo;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Queue;
 
 public class GameEngine {
 
+    private Activity activity;
     private Context context;
-
     private ArrayList<Note> notes;
-
     private ArrayList<Note> nextNotes;
+    private int ip; //indice portée donnant l'avancée dans le morceau.
+
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      */
-    public GameEngine(Activity activity, ArrayList<Note> notes){
+    public GameEngine(Activity activity){
+        this.activity = activity;
         this.context= activity.getApplicationContext();
-        this.notes = notes;
+        this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
+        this.ip = 0;
+    }
+
+    /** Méthode pour créer les notes à fournir au GameEngine */
+
+    public ArrayList<Note> createNotes(){
+        ArrayList<Note> notes = new ArrayList<>();
+        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire);
+        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire);
+        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire);
+        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire);
+        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire);
+        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire);
+        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire);
+
+        notes.add(doNote);
+        notes.add(reNote);
+        notes.add(miNote);
+        notes.add(faNote);
+        notes.add(solNote);
+        notes.add(laNote);
+        notes.add(siNote);
+
+        return notes;
     }
 
     /** Gére l'appuis sur un boutton. */
 
-    public void touched(String bouton){
-            if(bouton.equals("La")){
-                nextNotes.get(0).switchN(false);
-//                nextNotes.remove(0);
-            }
-            else if(bouton.equals("Do")){
-                nextNotes.get(1).switchN(false);
-            }
-            else {
+    public void touched(String bouton) {
+        if (ip < getNotes().size()) {
+            if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
+                getNotes().get(0).switchColor(false);
+                ip++;
+            } else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
+                getNotes().get(1).switchColor(false);
+                ip++;
+            } else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
+                getNotes().get(2).switchColor(false);
+                ip++;
+            } else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
+                getNotes().get(3).switchColor(false);
+                ip++;
+            } else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
+                getNotes().get(4).switchColor(false);
+                ip++;
+            } else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
+                getNotes().get(5).switchColor(false);
+                ip++;
+            } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
+                getNotes().get(6).switchColor(false);
+                ip++;
+            } else {
+                System.out.print("Error");
                 reInit();
             }
+        } else {
+            reInit();
+        }
+    }
+
+    /**
+     *  Permet de créer une portée, il sufit de rentrer le nom des notes dans l'ordre souhaité
+     */
+
+    public void createStave(String[] notes){
+        for(String note : notes){
+            switch (note){
+                case "Do":
+                    setNextNote(this.notes.get(0));
+                    break;
+                case "Ré":
+                    setNextNote(this.notes.get(1));
+                    break;
+                case "Mi":
+                    setNextNote(this.notes.get(2));
+                    break;
+                case "Fa":
+                    setNextNote(this.notes.get(3));
+                    break;
+                case "Sol":
+                    setNextNote(this.notes.get(4));
+                    break;
+                case "La":
+                    setNextNote(this.notes.get(5));
+                    break;
+                case "Si":
+                    setNextNote(this.notes.get(6));
+                    break;
+            }
+        }
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
@@ -61,8 +126,23 @@ public class GameEngine {
 
     public void reInit(){
         for(Note note : notes){
-            note.switchN(true);
+            note.switchColor(true);
         }
     }
 
+    public ArrayList<Note> getNotes() {
+        return notes;
+    }
+
+    public ArrayList<Note> getNextNotes() {
+        return nextNotes;
+    }
+
+    public void setNotes(ArrayList<Note> notes) {
+        this.notes = notes;
+    }
+
+    public void setNextNotes(ArrayList<Note> nextNotes) {
+        this.nextNotes = nextNotes;
+    }
 }

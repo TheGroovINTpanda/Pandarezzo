@@ -40,11 +40,11 @@
         android:id="@+id/pandaaccueil"
         android:layout_width="285dp"
         android:layout_height="385dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/panda_deux_bras_leves" />
+        app:srcCompat="@drawable/panda_deux_bras_leves_resize" />
 
 
     <!--<ImageView-->
