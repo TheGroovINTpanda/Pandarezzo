@@ -36,7 +36,11 @@ public class Niveau1 extends Niveau {
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
         GameEngine engine = new GameEngine(this);
+
+        /** Renseigner la portée de ce niveau dans level. */
+
         String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+
         engine.createStave(level);
 
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);

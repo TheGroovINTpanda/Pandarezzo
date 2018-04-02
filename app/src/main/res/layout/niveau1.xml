@@ -196,14 +196,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noire" />
 
-    <ImageView
-        android:id="@+id/noteNoire7"
-        android:layout_width="127dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
 
 </android.support.constraint.ConstraintLayout>
 
