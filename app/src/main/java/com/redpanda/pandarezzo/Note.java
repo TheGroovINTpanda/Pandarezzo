@@ -137,6 +137,11 @@ public class Note {
 //        activity.setContentView(noteNoire);
     }
 
+    public void getPosition(){
+        System.out.println(noteView.getX());
+        System.out.println(noteView.getY());
+    }
+
     @Override
     public String toString() {
         return this.name;
