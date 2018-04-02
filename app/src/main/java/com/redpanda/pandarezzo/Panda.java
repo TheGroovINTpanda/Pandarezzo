@@ -1,5 +1,6 @@
 package com.redpanda.pandarezzo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,8 +16,8 @@ public class Panda  {
 
 
 
-    public Panda(){
-        pandaView.setImageResource(R.drawable.pitit_panda_tout_mignon);
+    public Panda(Activity activity){
+        this.pandaView = activity.findViewById(R.id.panda_mignon);
     }
 
 

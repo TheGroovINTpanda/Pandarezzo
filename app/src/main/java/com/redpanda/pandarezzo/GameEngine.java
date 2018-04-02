@@ -24,7 +24,7 @@ public class GameEngine {
         this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
         this.ip = 0;
-        this.panda=new Panda();
+        this.panda=new Panda(activity);
     }
 
     /** Méthode pour créer les notes à fournir au GameEngine */
@@ -56,24 +56,31 @@ public class GameEngine {
         if (ip < getNotes().size()) {
             if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
                 getNotes().get(0).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
                 getNotes().get(1).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
                 getNotes().get(2).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
                 getNotes().get(3).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
                 getNotes().get(4).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
                 getNotes().get(5).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
                 getNotes().get(6).switchColor(false);
+                panda.animate(true);
                 ip++;
             }
             else {
@@ -81,7 +88,7 @@ public class GameEngine {
                 reInit();
                 panda.animate(false);
             }
-            panda.animate(true);
+
         } else {
             reInit();
             panda.animate(false);
