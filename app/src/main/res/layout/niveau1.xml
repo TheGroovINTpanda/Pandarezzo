@@ -5,106 +5,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.redpanda.pandarezzo.MainActivity">
+    tools:context="com.redpanda.pandarezzo.MainActivity"
+    android:background="@drawable/fond_niveau_refait">
 
 
     <ImageButton
         android:id="@+id/re_bulle"
         android:layout_width="114dp"
         android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
+        android:backgroundTint="@color/transparant"
         android:scaleType="fitXY"
         android:src="@drawable/re_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.549" />
 
     <ImageButton
         android:id="@+id/mi_bulle"
         android:layout_width="114dp"
         android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
+        android:backgroundTint="@color/transparant"
         android:scaleType="fitXY"
         android:src="@drawable/mi_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.455" />
 
     <ImageButton
         android:id="@+id/fa_bulle"
         android:layout_width="114dp"
         android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
+        android:backgroundTint="@color/transparant"
         android:scaleType="fitXY"
         android:src="@drawable/fa_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.549" />
+
+    <ImageButton
+        android:id="@+id/sol_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/sol_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <ImageButton
+        android:id="@+id/la_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/la_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
 
     <ImageButton
-        android:id="@+id/sol_bulle"
-        android:layout_width="114dp"
-        android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
-        android:scaleType="fitXY"
-        android:src="@drawable/sol_bulle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
-
-    <ImageButton
-        android:id="@+id/la_bulle"
-        android:layout_width="114dp"
-        android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
-        android:scaleType="fitXY"
-        android:src="@drawable/la_bulle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
-
-    <ImageButton
         android:id="@+id/si_bulle"
         android:layout_width="114dp"
         android:layout_height="76dp"
-        android:backgroundTint="@color/blanc"
+        android:backgroundTint="@color/transparant"
         android:scaleType="fitXY"
         android:src="@drawable/si_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.988" />
+
 
     <ImageButton
         android:id="@+id/do_bulle"
         android:layout_width="114dp"
         android:layout_height="78dp"
-        android:backgroundTint="@color/blanc"
+        android:backgroundTint="@color/transparant"
         android:scaleType="fitXY"
         android:src="@drawable/do_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.812" />
 
+
+<!--
     <TextView
         android:id="@+id/textViewDebug"
         android:layout_width="wrap_content"
@@ -115,86 +119,87 @@
         android:textSize="42sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+-->
     <ImageView
         android:id="@+id/imageViewPortee_resize"
-        android:layout_width="425dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="335dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="4dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDebug"
-        app:srcCompat="@drawable/background_portee_resize" />
+        app:srcCompat="@drawable/background_portee_resize"
+        tools:layout_editor_absoluteY="32dp" />
+
 
     <ImageView
         android:id="@+id/noteNoire"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="244dp"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire1"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="208dp"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="243dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire2"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
         android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire3"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
         android:layout_marginStart="144dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire4"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire5"
-        android:layout_width="124dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire6"
-        android:layout_width="127dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="54dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/note_noire" />
+        app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/panda_mignon"
@@ -202,14 +207,13 @@
         android:layout_height="205dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="232dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.303"
         app:srcCompat="@drawable/pitit_panda_tout_mignon" />
 
 
