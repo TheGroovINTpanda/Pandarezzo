@@ -133,70 +133,70 @@
 
     <ImageView
         android:id="@+id/noteNoire"
-        android:layout_width="60dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire1"
-        android:layout_width="60dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="243dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="34dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire2"
-        android:layout_width="60dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="39dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire3"
-        android:layout_width="52dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire4"
-        android:layout_width="52dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire5"
-        android:layout_width="52dp"
-        android:layout_height="55dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
         android:id="@+id/noteNoire6"
-        android:layout_width="52dp"
-        android:layout_height="55dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="62dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_noir_resize" />
@@ -216,6 +216,17 @@
         app:layout_constraintVertical_bias="0.303"
         app:srcCompat="@drawable/pitit_panda_tout_mignon" />
 
+<!--
+Index pour les notes: (margin top)
+mi -> 62dp
+fa -> 56dp
+sol -> 50dp
+la -> 44dp
+si -> 39dp
+do -> 34dp
+re -> 28dp
 
+Ecart entre les noires : 40 dp
+-->
 </android.support.constraint.ConstraintLayout>
 
