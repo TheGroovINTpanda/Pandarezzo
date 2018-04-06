@@ -32,7 +32,6 @@ public class Niveau1 extends Niveau {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
-
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
         GameEngine engine = new GameEngine(this);
@@ -42,7 +41,7 @@ public class Niveau1 extends Niveau {
         String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
 
         engine.createStave(level);
-
+        //TODO Redimentionner les notes et les implémenter
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
         Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
         Bouton mi = new Bouton("Mi", this, engine, R.id.mi_bulle, R.raw.mi);

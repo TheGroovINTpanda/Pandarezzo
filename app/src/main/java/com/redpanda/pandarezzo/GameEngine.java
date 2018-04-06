@@ -12,6 +12,7 @@ public class GameEngine {
     private ArrayList<Note> notes;
     private ArrayList<Note> nextNotes;
     private int ip; //indice portée donnant l'avancée dans le morceau.
+    private Panda panda;
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -23,19 +24,20 @@ public class GameEngine {
         this.notes = createNotes();
         this. nextNotes = new ArrayList<>() ;
         this.ip = 0;
+        this.panda=new Panda(activity);
     }
 
     /** Méthode pour créer les notes à fournir au GameEngine */
 
     public ArrayList<Note> createNotes(){
         ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire);
-        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire);
-        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire);
-        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire);
-        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire);
-        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire);
-        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire);
+        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
+        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
+        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
+        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
+        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
+        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
+        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
 
         notes.add(doNote);
         notes.add(reNote);
@@ -54,31 +56,42 @@ public class GameEngine {
         if (ip < getNotes().size()) {
             if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
                 getNotes().get(0).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
                 getNotes().get(1).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
                 getNotes().get(2).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
                 getNotes().get(3).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
                 getNotes().get(4).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
                 getNotes().get(5).switchColor(false);
+                panda.animate(true);
                 ip++;
             } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
                 getNotes().get(6).switchColor(false);
+                panda.animate(true);
                 ip++;
-            } else {
+            }
+            else {
                 System.out.print("Error");
                 reInit();
+                panda.animate(false);
             }
+
         } else {
             reInit();
+            panda.animate(false);
         }
     }
 

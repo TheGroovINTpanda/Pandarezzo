@@ -90,7 +90,7 @@ public class Note {
 
     public void switchColor(Boolean isPlayed){
         if(isPlayed){
-            noteView.setImageResource(R.drawable.note_noire);
+            noteView.setImageResource(R.drawable.note_noir_resize);
         } else {
             noteView.setImageResource(refNote);
         }
@@ -135,6 +135,11 @@ public class Note {
 //        noteNoire.setImageBitmap(noteNoireBitmap);
 //        activity.addContentView(noteImage, new LinearLayout.LayoutParams(100,100));
 //        activity.setContentView(noteNoire);
+    }
+
+    public void getPosition(){
+        System.out.println(noteView.getX());
+        System.out.println(noteView.getY());
     }
 
     @Override
