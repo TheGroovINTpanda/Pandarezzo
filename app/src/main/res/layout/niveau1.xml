@@ -123,12 +123,12 @@
     <ImageView
         android:id="@+id/imageViewPortee_resize"
         android:layout_width="335dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="4dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/background_portee_resize"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteY="28dp" />
 
 
     <ImageView
