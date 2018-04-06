@@ -90,7 +90,7 @@ public class Note {
 
     public void switchColor(Boolean isPlayed){
         if(isPlayed){
-            noteView.setImageResource(R.drawable.note_noire);
+            noteView.setImageResource(R.drawable.note_noir_resize);
         } else {
             noteView.setImageResource(refNote);
         }

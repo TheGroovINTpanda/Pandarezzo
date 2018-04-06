@@ -31,13 +31,13 @@ public class GameEngine {
 
     public ArrayList<Note> createNotes(){
         ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire);
-        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire);
-        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire);
-        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire);
-        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire);
-        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire);
-        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire);
+        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
+        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
+        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
+        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
+        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
+        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
+        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
 
         notes.add(doNote);
         notes.add(reNote);

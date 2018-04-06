@@ -14,5 +14,6 @@
     <color name="tomate">#FF6347</color>
     <color name="blanc_antique">#FAEBD7</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="transparant">#00FFFFFF</color>
 
 </resources>
