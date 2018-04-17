@@ -10,6 +10,7 @@ public class GameEngine {
     private Activity activity;
     private Context context;
     private ArrayList<Note> notes;
+    private String[] nameNextNotes;
     private ArrayList<Note> nextNotes;
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
@@ -17,14 +18,17 @@ public class GameEngine {
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
+     On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      */
-    public GameEngine(Activity activity){
+    public GameEngine(Activity activity, String[] nameNextNotes){
         this.activity = activity;
         this.context= activity.getApplicationContext();
         this.notes = createNotes();
-        this. nextNotes = new ArrayList<>() ;
+        this.nameNextNotes = nameNextNotes;
+        this.nextNotes = new ArrayList<>() ;
         this.ip = 0;
         this.panda=new Panda(activity);
+        createStave();
     }
 
     /** Méthode appelé par le gameEngine pour créer de nouvelle notes */
@@ -123,8 +127,8 @@ public class GameEngine {
      *  Permet de créer une portée, il sufit de rentrer le nom des notes dans l'ordre souhaité
      */
 
-    public void createStave(String[] notes){
-        for(String note : notes){
+    public void createStave(){
+        for(String note : nameNextNotes){
             switch (note){
                 case "Do":
                     setNextNote(this.notes.get(0));
