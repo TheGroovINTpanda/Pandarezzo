@@ -27,17 +27,41 @@ public class GameEngine {
         this.panda=new Panda(activity);
     }
 
+    /** Méthode appelé par le gameEngine pour créer de nouvelle notes */
+
+    public Note createNote(String name){
+        switch (name){
+            case "Do":
+                return new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
+            case "Ré":
+                return new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
+            case "Mi":
+                return new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
+            case "Fa":
+                return new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
+            case "Sol":
+                return new Note("Sol", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
+            case "La":
+                return new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
+            case "Si":
+                return new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
+            default:
+                System.out.println("Nom de note incorrect.");
+                return null;
+        }
+    }
+
     /** Méthode pour créer les notes à fournir au GameEngine */
 
     public ArrayList<Note> createNotes(){
         ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
-        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
-        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
-        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
-        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
-        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
-        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
+        Note doNote = createNote("Do");
+        Note reNote = createNote("Ré");
+        Note miNote = createNote("Mi");
+        Note faNote = createNote("Fa");
+        Note solNote = createNote("Sol");
+        Note laNote = createNote("La");
+        Note siNote = createNote("Si");
 
         notes.add(doNote);
         notes.add(reNote);
