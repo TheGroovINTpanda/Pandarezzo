@@ -47,6 +47,7 @@ public class Note {
      * @param position Position de la note sur la portée.
      */
     public void setPosition(int position){
+        //TODO fixer le pas-latteral
         int pas_latteral =  200; //Eccart entre deux notes sur la portée.
         int xNote = -442 + position * pas_latteral;
         int yNode = 0;             //Hauteur caractéristique d'une note.
