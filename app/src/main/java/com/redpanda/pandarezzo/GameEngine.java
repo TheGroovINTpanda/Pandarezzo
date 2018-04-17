@@ -9,9 +9,8 @@ public class GameEngine {
 
     private Activity activity;
     private Context context;
-    private ArrayList<Note> notes;
     private String[] nameNextNotes;
-    private ArrayList<Note> nextNotes;
+    private ArrayList<Note> nextNotes; //liste des notes constituant un morceau.
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
 
@@ -23,7 +22,6 @@ public class GameEngine {
     public GameEngine(Activity activity, String[] nameNextNotes){
         this.activity = activity;
         this.context= activity.getApplicationContext();
-        this.notes = createNotes();
         this.nameNextNotes = nameNextNotes;
         this.nextNotes = new ArrayList<>() ;
         this.ip = 0;
@@ -55,59 +53,36 @@ public class GameEngine {
         }
     }
 
-    /** Méthode pour créer les notes à fournir au GameEngine */
-
-    public ArrayList<Note> createNotes(){
-        ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = createNote("Do");
-        Note reNote = createNote("Ré");
-        Note miNote = createNote("Mi");
-        Note faNote = createNote("Fa");
-        Note solNote = createNote("Sol");
-        Note laNote = createNote("La");
-        Note siNote = createNote("Si");
-
-        notes.add(doNote);
-        notes.add(reNote);
-        notes.add(miNote);
-        notes.add(faNote);
-        notes.add(solNote);
-        notes.add(laNote);
-        notes.add(siNote);
-
-        return notes;
-    }
-
     /** Gére l'appuis sur un boutton. */
 
     public void touched(String bouton) {
-        if (ip < getNotes().size()) {
-            if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
-                getNotes().get(0).switchColor(false);
+        if (ip < getNextNotes().size()) {
+            if (bouton.equals("Do") && getNextNotes().get(ip).getName().equals("Do")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
-                getNotes().get(1).switchColor(false);
+            } else if (bouton.equals("Ré") && getNextNotes().get(ip).getName().equals("Ré")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
-                getNotes().get(2).switchColor(false);
+            } else if (bouton.equals("Mi") && getNextNotes().get(ip).getName().equals("Mi")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
-                getNotes().get(3).switchColor(false);
+            } else if (bouton.equals("Fa") && getNextNotes().get(ip).getName().equals("Fa")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
-                getNotes().get(4).switchColor(false);
+            } else if (bouton.equals("Sol") && getNextNotes().get(ip).getName().equals("Sol")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
-                getNotes().get(5).switchColor(false);
+            } else if (bouton.equals("La") && getNextNotes().get(ip).getName().equals("La")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
-                getNotes().get(6).switchColor(false);
+            } else if (bouton.equals("Si") && getNextNotes().get(ip).getName().equals("Si")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
             }
@@ -129,29 +104,7 @@ public class GameEngine {
 
     public void createStave(){
         for(String note : nameNextNotes){
-            switch (note){
-                case "Do":
-                    setNextNote(this.notes.get(0));
-                    break;
-                case "Ré":
-                    setNextNote(this.notes.get(1));
-                    break;
-                case "Mi":
-                    setNextNote(this.notes.get(2));
-                    break;
-                case "Fa":
-                    setNextNote(this.notes.get(3));
-                    break;
-                case "Sol":
-                    setNextNote(this.notes.get(4));
-                    break;
-                case "La":
-                    setNextNote(this.notes.get(5));
-                    break;
-                case "Si":
-                    setNextNote(this.notes.get(6));
-                    break;
-            }
+            setNextNote(createNote(note));
         }
     }
 
@@ -166,22 +119,15 @@ public class GameEngine {
     /** Replace et remet la textures noire de toutes les notes. */
 
     public void reInit(){
-        for(Note note : notes){
+        for(Note note: nextNotes){
             note.switchColor(true);
         }
-    }
-
-    public ArrayList<Note> getNotes() {
-        return notes;
     }
 
     public ArrayList<Note> getNextNotes() {
         return nextNotes;
     }
 
-    public void setNotes(ArrayList<Note> notes) {
-        this.notes = notes;
-    }
 
     public void setNextNotes(ArrayList<Note> nextNotes) {
         this.nextNotes = nextNotes;
