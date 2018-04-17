@@ -105,6 +105,8 @@ public class GameEngine {
     public void createStave(){
         for(String note : nameNextNotes){
             setNextNote(createNote(note));
+            int i = nextNotes.size()-1;
+            nextNotes.get(i).setPosition(i);
         }
     }
 

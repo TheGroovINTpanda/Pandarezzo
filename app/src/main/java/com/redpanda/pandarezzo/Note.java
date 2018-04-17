@@ -42,42 +42,36 @@ public class Note {
         width = noteView.getWidth();
     }
 
-    // TODO Renseigner les positions pour chaque notes dans xNote et yNote.
-    public void setPosition(String name){
-        int xNote;
-        int yNode;
+    /**
+     * Permet de placer les notes sur la portée. Est appelé par le gameEngine lors de la création d'une portée
+     * @param position Position de la note sur la portée.
+     */
+    public void setPosition(int position){
+        int pas_latteral =  200; //Eccart entre deux notes sur la portée.
+        int xNote = -442 + position * pas_latteral;
+        int yNode = 0;             //Hauteur caractéristique d'une note.
         switch (name){
             case "Do":
-                xNote = 0;
-                yNode = 0;
+                yNode = 97;
                 break;
             case "Ré":
-                xNote = 0;
-                yNode = 0;
+                yNode = 60;
                 break;
             case "Mi":
-                xNote = 0;
-                yNode = 0;
+                yNode = 40;
                 break;
             case "Fa":
-                xNote = 0;
                 yNode = 0;
                 break;
             case "Sol":
-                xNote = 0;
-                yNode = 0;
+                yNode = -30;
                 break;
             case "La":
-                xNote = 0;
-                yNode = 0;
+                yNode = -60;
                 break;
             case "Si":
-                xNote = 0;
-                yNode = 0;
+                yNode = -100;
                 break;
-            default:
-                xNote = 0;
-                yNode = 0;
         }
         setX(xNote);
         noteView.setX(xNote);
