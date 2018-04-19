@@ -17,17 +17,23 @@ public class Panda  {
 
 
     public Panda(Activity activity){
-        this.pandaView = activity.findViewById(R.id.panda_mignon);
+        this.pandaView = activity.findViewById(R.id.pandamignon);
     }
 
 
 
     public void animate(Boolean correct){
         if(correct) {
-            pandaView.setImageResource(R.drawable.panda_deux_bras_leves_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_00_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_01_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_02_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_03_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_04_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_05_resize);
+                pandaView.setImageResource(R.drawable.panda_leve_2_bras_06_resize);
         }
         else{
-            pandaView.setImageResource(R.drawable.pitit_panda_tout_mignon);
+            pandaView.setImageResource(R.drawable.panda_leve_2_bras_00_resize);
         }
     }
 }
