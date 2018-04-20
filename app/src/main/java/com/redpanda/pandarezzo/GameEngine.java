@@ -29,24 +29,31 @@ public class GameEngine {
         createStave();
     }
 
-    /** Méthode appelé par le gameEngine pour créer de nouvelle notes */
+    /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
+     *
+     * @param name
+     * @param i numéro de la note qu'on veut créer
+     * @return
+     */
 
-    public Note createNote(String name){
+    public Note createNote(String name, int i){
+        int[] noteID = {R.id.noteNoire, R.id.noteNoire1, R.id.noteNoire2, R.id.noteNoire3, R.id.noteNoire4,
+                R.id.noteNoire5, R.id.noteNoire6};
         switch (name){
             case "Do":
-                return new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
+                return new Note("Do", activity, noteID[i], R.drawable.do_noire_resize);
             case "Ré":
-                return new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
+                return new Note("Ré", activity, noteID[i], R.drawable.re_noire_resize);
             case "Mi":
-                return new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
+                return new Note("Mi", activity, noteID[i], R.drawable.mi_noire_resize);
             case "Fa":
-                return new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
+                return new Note("Fa", activity, noteID[i], R.drawable.fa_noire_resize);
             case "Sol":
-                return new Note("Sol", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
+                return new Note("Sol", activity, noteID[i], R.drawable.sol_noire_resize);
             case "La":
-                return new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
+                return new Note("La", activity,  noteID[i], R.drawable.la_noire_resize);
             case "Si":
-                return new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
+                return new Note("Si", activity,  noteID[i], R.drawable.si_noire_resize);
             default:
                 System.out.println("Nom de note incorrect.");
                 return null;
@@ -104,8 +111,8 @@ public class GameEngine {
 
     public void createStave(){
         for(String note : nameNextNotes){
-            setNextNote(createNote(note));
-            int i = nextNotes.size()-1;
+            int i = nextNotes.size();
+            setNextNote(createNote(note,i));
             nextNotes.get(i).setPosition(i);
         }
     }
