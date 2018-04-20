@@ -48,30 +48,31 @@ public class Note {
      */
     public void setPosition(int position){
         //TODO fixer le pas-latteral
-        int pas_latteral =  200; //Eccart entre deux notes sur la portée.
-        int xNote = -442 + position * pas_latteral;
+        int pas_latteral =  120; //Eccart entre deux notes sur la portée.
+        int pas_horrizontal = 0;
+        int xNote = 0 + position * pas_latteral;
         int yNode = 0;             //Hauteur caractéristique d'une note.
         switch (name){
             case "Do":
-                yNode = 97;
+                yNode = 0 + pas_horrizontal;
                 break;
             case "Ré":
-                yNode = 60;
+                yNode = -20+ pas_horrizontal;
                 break;
             case "Mi":
-                yNode = 40;
+                yNode = -36+ pas_horrizontal;
                 break;
             case "Fa":
-                yNode = 0;
+                yNode = -50 + pas_horrizontal;
                 break;
             case "Sol":
-                yNode = -30;
+                yNode = -70 + pas_horrizontal;
                 break;
             case "La":
-                yNode = -60;
+                yNode = -83 + pas_horrizontal;
                 break;
             case "Si":
-                yNode = -100;
+                yNode = -100 + pas_horrizontal;
                 break;
         }
         setX(xNote);

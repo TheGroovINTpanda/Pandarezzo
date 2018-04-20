@@ -36,8 +36,8 @@ public class Niveau1 extends Niveau {
 
         /** Renseigner la portée de ce niveau dans level. */
 
-        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
-//        String[] level = {"Si","Mi","La","Sol","Do","Fa","Ré"};
+//        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+        String[] level = {"Si","Mi","La","Ré","Sol","Do","Fa"};
 
         GameEngine engine = new GameEngine(this, level);
 
