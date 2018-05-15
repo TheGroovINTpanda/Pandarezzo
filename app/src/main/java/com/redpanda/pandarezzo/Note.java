@@ -42,42 +42,38 @@ public class Note {
         width = noteView.getWidth();
     }
 
-    // TODO Renseigner les positions pour chaque notes dans xNote et yNote.
-    public void setPosition(String name){
-        int xNote;
-        int yNode;
+    /**
+     * Permet de placer les notes sur la portée. Est appelé par le gameEngine lors de la création d'une portée
+     * @param position Position de la note sur la portée.
+     */
+    public void setPosition(int position){
+        //TODO fixer le pas-latteral
+        int pas_latteral =  120; //Eccart entre deux notes sur la portée.
+        int pas_horrizontal = 0;
+        int xNote = 0 + position * pas_latteral;
+        int yNode = 0;             //Hauteur caractéristique d'une note.
         switch (name){
             case "Do":
-                xNote = 0;
-                yNode = 0;
+                yNode = 0 + pas_horrizontal;
                 break;
             case "Ré":
-                xNote = 0;
-                yNode = 0;
+                yNode = -20+ pas_horrizontal;
                 break;
             case "Mi":
-                xNote = 0;
-                yNode = 0;
+                yNode = -36+ pas_horrizontal;
                 break;
             case "Fa":
-                xNote = 0;
-                yNode = 0;
+                yNode = -50 + pas_horrizontal;
                 break;
             case "Sol":
-                xNote = 0;
-                yNode = 0;
+                yNode = -70 + pas_horrizontal;
                 break;
             case "La":
-                xNote = 0;
-                yNode = 0;
+                yNode = -83 + pas_horrizontal;
                 break;
             case "Si":
-                xNote = 0;
-                yNode = 0;
+                yNode = -100 + pas_horrizontal;
                 break;
-            default:
-                xNote = 0;
-                yNode = 0;
         }
         setX(xNote);
         noteView.setX(xNote);
@@ -164,6 +160,8 @@ public class Note {
     }
 
     public Boolean getIsnextNote() { return isnextNote;}
+
+    public String getName() {return name;}
 
     public void setX(int x) {this.x = x; }
 

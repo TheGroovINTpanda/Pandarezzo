@@ -35,6 +35,7 @@ public class Niveau1 extends Niveau {
         setContentView(R.layout.niveau1);
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
+
         ImageView panda=findViewById(R.id.pandamignon);
         panda.setBackgroundResource(R.drawable.panda_animation);
         pandaAnimation = (AnimationDrawable) panda.getBackground();
@@ -46,14 +47,26 @@ public class Niveau1 extends Niveau {
             }
         });
 
-        GameEngine engine = new GameEngine(this);
-
 
         /** Renseigner la portée de ce niveau dans level. */
 
-        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+//        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+//        String[] level = {"Si","Mi","La","Ré","Sol","Do","Fa"};
+        String[] level = {"Mi","Mi","Fa","Sol","La","Ré","Do"};
 
-        engine.createStave(level);
+        GameEngine engine = new GameEngine(this, level);
+
+
+
+
+        //TODO Redimentionner les notes et les implémenter
+        Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
+        Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
+        Bouton mi = new Bouton("Mi", this, engine, R.id.mi_bulle, R.raw.mi);
+        Bouton fa = new Bouton("Fa", this, engine, R.id.fa_bulle, R.raw.fa);
+        Bouton sol= new Bouton("Sol", this, engine, R.id.sol_bulle, R.raw.sol);
+        Bouton la = new Bouton("La", this, engine, R.id.la_bulle, R.raw.la);
+        Bouton si = new Bouton("Si", this, engine, R.id.si_bulle, R.raw.si);
 
 
 

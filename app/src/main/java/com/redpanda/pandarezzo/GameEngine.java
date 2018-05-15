@@ -9,77 +9,87 @@ public class GameEngine {
 
     private Activity activity;
     private Context context;
-    private ArrayList<Note> notes;
-    private ArrayList<Note> nextNotes;
+    private String[] nameNextNotes;
+    private ArrayList<Note> nextNotes; //liste des notes constituant un morceau.
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
+     On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      */
-    public GameEngine(Activity activity){
+    public GameEngine(Activity activity, String[] nameNextNotes){
         this.activity = activity;
         this.context= activity.getApplicationContext();
-        this.notes = createNotes();
-        this. nextNotes = new ArrayList<>() ;
+        this.nameNextNotes = nameNextNotes;
+        this.nextNotes = new ArrayList<>() ;
         this.ip = 0;
         this.panda=new Panda(activity);
+        createStave();
     }
 
-    /** Méthode pour créer les notes à fournir au GameEngine */
+    /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
+     *
+     * @param name
+     * @param i numéro de la note qu'on veut créer
+     * @return
+     */
 
-    public ArrayList<Note> createNotes(){
-        ArrayList<Note> notes = new ArrayList<>();
-        Note doNote = new Note("Do", activity, R.id.noteNoire, R.drawable.do_noire_resize);
-        Note reNote = new Note("Ré", activity, R.id.noteNoire1, R.drawable.re_noire_resize);
-        Note miNote = new Note("Mi", activity, R.id.noteNoire2, R.drawable.mi_noire_resize);
-        Note faNote = new Note("Fa", activity, R.id.noteNoire3, R.drawable.fa_noire_resize);
-        Note solNote = new Note("Sal", activity, R.id.noteNoire4, R.drawable.sol_noire_resize);
-        Note laNote = new Note("La", activity,  R.id.noteNoire5,R.drawable.la_noire_resize);
-        Note siNote = new Note("Si", activity,  R.id.noteNoire6,R.drawable.si_noire_resize);
-
-        notes.add(doNote);
-        notes.add(reNote);
-        notes.add(miNote);
-        notes.add(faNote);
-        notes.add(solNote);
-        notes.add(laNote);
-        notes.add(siNote);
-
-        return notes;
+    public Note createNote(String name, int i){
+        int[] noteID = {R.id.noteNoire, R.id.noteNoire1, R.id.noteNoire2, R.id.noteNoire3, R.id.noteNoire4,
+                R.id.noteNoire5, R.id.noteNoire6};
+        switch (name){
+            case "Do":
+                return new Note("Do", activity, noteID[i], R.drawable.do_noire_resize);
+            case "Ré":
+                return new Note("Ré", activity, noteID[i], R.drawable.re_noire_resize);
+            case "Mi":
+                return new Note("Mi", activity, noteID[i], R.drawable.mi_noire_resize);
+            case "Fa":
+                return new Note("Fa", activity, noteID[i], R.drawable.fa_noire_resize);
+            case "Sol":
+                return new Note("Sol", activity, noteID[i], R.drawable.sol_noire_resize);
+            case "La":
+                return new Note("La", activity,  noteID[i], R.drawable.la_noire_resize);
+            case "Si":
+                return new Note("Si", activity,  noteID[i], R.drawable.si_noire_resize);
+            default:
+                System.out.println("Nom de note incorrect.");
+                return null;
+        }
     }
 
     /** Gére l'appuis sur un boutton. */
 
     public void touched(String bouton) {
-        if (ip < getNotes().size()) {
-            if (bouton.equals("Do") && getNotes().get(0) == getNextNotes().get(ip)) {
-                getNotes().get(0).switchColor(false);
+        if (ip < getNextNotes().size()) {
+            if (bouton.equals("Do") && getNextNotes().get(ip).getName().equals("Do")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Ré") && getNotes().get(1).equals(getNextNotes().get(ip))) {
-                getNotes().get(1).switchColor(false);
+            } else if (bouton.equals("Ré") && getNextNotes().get(ip).getName().equals("Ré")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Mi") && getNotes().get(2).equals(getNextNotes().get(ip))) {
-                getNotes().get(2).switchColor(false);
+            } else if (bouton.equals("Mi") && getNextNotes().get(ip).getName().equals("Mi")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Fa") && getNotes().get(3).equals(getNextNotes().get(ip))) {
-                getNotes().get(3).switchColor(false);
+            } else if (bouton.equals("Fa") && getNextNotes().get(ip).getName().equals("Fa")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Sol") && getNotes().get(4).equals(getNextNotes().get(ip))) {
-                getNotes().get(4).switchColor(false);
+            } else if (bouton.equals("Sol") && getNextNotes().get(ip).getName().equals("Sol")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("La") && getNotes().get(5).equals(getNextNotes().get(ip))) {
-                getNotes().get(5).switchColor(false);
+            } else if (bouton.equals("La") && getNextNotes().get(ip).getName().equals("La")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
-            } else if (bouton.equals("Si") && getNotes().get(6).equals(getNextNotes().get(ip))) {
-                getNotes().get(6).switchColor(false);
+            } else if (bouton.equals("Si") && getNextNotes().get(ip).getName().equals("Si")) {
+                getNextNotes().get(ip).switchColor(false);
                 panda.animate(true);
                 ip++;
             }
@@ -99,31 +109,11 @@ public class GameEngine {
      *  Permet de créer une portée, il sufit de rentrer le nom des notes dans l'ordre souhaité
      */
 
-    public void createStave(String[] notes){
-        for(String note : notes){
-            switch (note){
-                case "Do":
-                    setNextNote(this.notes.get(0));
-                    break;
-                case "Ré":
-                    setNextNote(this.notes.get(1));
-                    break;
-                case "Mi":
-                    setNextNote(this.notes.get(2));
-                    break;
-                case "Fa":
-                    setNextNote(this.notes.get(3));
-                    break;
-                case "Sol":
-                    setNextNote(this.notes.get(4));
-                    break;
-                case "La":
-                    setNextNote(this.notes.get(5));
-                    break;
-                case "Si":
-                    setNextNote(this.notes.get(6));
-                    break;
-            }
+    public void createStave(){
+        for(String note : nameNextNotes){
+            int i = nextNotes.size();
+            setNextNote(createNote(note,i));
+            nextNotes.get(i).setPosition(i);
         }
     }
 
@@ -138,22 +128,15 @@ public class GameEngine {
     /** Replace et remet la textures noire de toutes les notes. */
 
     public void reInit(){
-        for(Note note : notes){
+        for(Note note: nextNotes){
             note.switchColor(true);
         }
-    }
-
-    public ArrayList<Note> getNotes() {
-        return notes;
     }
 
     public ArrayList<Note> getNextNotes() {
         return nextNotes;
     }
 
-    public void setNotes(ArrayList<Note> notes) {
-        this.notes = notes;
-    }
 
     public void setNextNotes(ArrayList<Note> nextNotes) {
         this.nextNotes = nextNotes;
