@@ -203,7 +203,7 @@
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
-        android:id="@+id/pandamignon"
+        android:id="@+id/pandaMignon"
         android:layout_width="175dp"
         android:layout_height="228dp"
         android:layout_marginBottom="8dp"

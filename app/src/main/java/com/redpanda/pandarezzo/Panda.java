@@ -12,28 +12,26 @@ import android.widget.ImageView;
 
 public class Panda  {
     private ImageView pandaView;
+    private AnimationDrawable pandaAnimation;
 
 
 
 
     public Panda(Activity activity){
-        this.pandaView = activity.findViewById(R.id.pandamignon);
+        this.pandaView = activity.findViewById(R.id.pandaMignon);
+        pandaView.setBackgroundResource(R.drawable.panda_animation);
+        pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
 
 
 
-    public void animate(Boolean correct){
+    public void animate(boolean correct) {
         if(correct) {
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_00_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_01_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_02_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_03_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_04_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_05_resize);
-                pandaView.setImageResource(R.drawable.panda_leve_2_bras_06_resize);
+            pandaAnimation.start();
         }
         else{
             pandaView.setImageResource(R.drawable.panda_leve_2_bras_00_resize);
         }
     }
+
 }
