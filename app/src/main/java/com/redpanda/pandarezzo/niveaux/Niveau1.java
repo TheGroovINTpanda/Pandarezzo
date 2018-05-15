@@ -1,29 +1,12 @@
 package com.redpanda.pandarezzo.niveaux;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.media.Image;
-import android.media.MediaPlayer;
+
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Gallery;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.redpanda.pandarezzo.Bouton;
 import com.redpanda.pandarezzo.GameEngine;
 import com.redpanda.pandarezzo.Niveau;
-import com.redpanda.pandarezzo.Note;
 import com.redpanda.pandarezzo.R;
-import com.redpanda.pandarezzo.Son;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class Niveau1 extends Niveau {
 
@@ -40,7 +23,7 @@ public class Niveau1 extends Niveau {
 //        String[] level = {"Si","Mi","La","Ré","Sol","Do","Fa"};
         String[] level = {"Mi","Mi","Fa","Sol","La","Ré","Do"};
 
-        GameEngine engine = new GameEngine(this, level);
+        GameEngine engine = new GameEngine(this, level, false);
 
 
 

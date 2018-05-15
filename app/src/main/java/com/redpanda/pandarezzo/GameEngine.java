@@ -13,20 +13,24 @@ public class GameEngine {
     private ArrayList<Note> nextNotes; //liste des notes constituant un morceau.
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
+    private boolean editionMode;
+    private int noteToComplete; //Nombre de note pour compléter le morceau.
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
     graphique est créée)
      On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      */
-    public GameEngine(Activity activity, String[] nameNextNotes){
+    public GameEngine(Activity activity, String[] nameNextNotes, boolean editionMode){
         this.activity = activity;
         this.context= activity.getApplicationContext();
         this.nameNextNotes = nameNextNotes;
         this.nextNotes = new ArrayList<>() ;
         this.ip = 0;
         this.panda=new Panda(activity);
-        createStave();
+        this.editionMode = editionMode;
+        this.noteToComplete = 0;
+//        createStave();
     }
 
     /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
@@ -60,48 +64,57 @@ public class GameEngine {
         }
     }
 
-    /** Gére l'appuis sur un boutton. */
+    /** Gére l'appuis sur un boutton. Si on est dans le mode edition on compose la partition, sinon
+     * on apprend le morceau en le jouant.
+     * */
 
     public void touched(String bouton) {
-        if (ip < getNextNotes().size()) {
-            if (bouton.equals("Do") && getNextNotes().get(ip).getName().equals("Do")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("Ré") && getNextNotes().get(ip).getName().equals("Ré")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("Mi") && getNextNotes().get(ip).getName().equals("Mi")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("Fa") && getNextNotes().get(ip).getName().equals("Fa")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("Sol") && getNextNotes().get(ip).getName().equals("Sol")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("La") && getNextNotes().get(ip).getName().equals("La")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
-            } else if (bouton.equals("Si") && getNextNotes().get(ip).getName().equals("Si")) {
-                getNextNotes().get(ip).switchColor(false);
-                panda.animate(true);
-                ip++;
+        if (editionMode){
+            nameNextNotes[noteToComplete] = bouton;
+            noteToComplete++;
+            if (noteToComplete == 7){
+                edition();
             }
-            else {
-                System.out.print("Error");
+        } else {
+            if (ip < getNextNotes().size()) {
+                if (bouton.equals("Do") && getNextNotes().get(ip).getName().equals("Do")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("Ré") && getNextNotes().get(ip).getName().equals("Ré")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("Mi") && getNextNotes().get(ip).getName().equals("Mi")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("Fa") && getNextNotes().get(ip).getName().equals("Fa")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("Sol") && getNextNotes().get(ip).getName().equals("Sol")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("La") && getNextNotes().get(ip).getName().equals("La")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else if (bouton.equals("Si") && getNextNotes().get(ip).getName().equals("Si")) {
+                    getNextNotes().get(ip).switchColor(false);
+                    panda.animate(true);
+                    ip++;
+                } else {
+                    System.out.print("Error");
+                    reInit();
+                    panda.animate(false);
+                }
+
+            } else {
                 reInit();
                 panda.animate(false);
             }
-
-        } else {
-            reInit();
-            panda.animate(false);
         }
     }
 
@@ -115,6 +128,11 @@ public class GameEngine {
             setNextNote(createNote(note,i));
             nextNotes.get(i).setPosition(i);
         }
+    }
+
+    private void edition(){
+        this.editionMode=false;
+        createStave();
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
@@ -132,7 +150,6 @@ public class GameEngine {
             note.switchColor(true);
         }
     }
-
     public ArrayList<Note> getNextNotes() {
         return nextNotes;
     }

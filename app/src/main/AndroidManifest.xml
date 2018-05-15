@@ -19,6 +19,7 @@
         <activity android:name=".niveaux.Niveau1">
             android:label="Nouvelle Activité"
         </activity>
+        <activity android:name=".LevelEditor"></activity>
     </application>
 
 </manifest>

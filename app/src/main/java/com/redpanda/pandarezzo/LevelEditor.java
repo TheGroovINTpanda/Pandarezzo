@@ -1,8 +1,41 @@
 package com.redpanda.pandarezzo;
 
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 /**
- * Created by samuel on 15/05/18.
+ * Created by sam on 15/05/18.
  */
 
-public class LevelEditor {
+public class LevelEditor extends AppCompatActivity{
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.niveau1);
+//        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
+
+        /** Renseigner la portée de ce niveau dans level. */
+
+
+
+        String[] level = {"Do","Do","Do","Do","Do","Do","Do",};
+
+
+        GameEngine engine = new GameEngine(this, level, true);
+
+
+//TODO Redimentionner les notes et les implémenter
+        Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
+        Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
+        Bouton mi = new Bouton("Mi", this, engine, R.id.mi_bulle, R.raw.mi);
+        Bouton fa = new Bouton("Fa", this, engine, R.id.fa_bulle, R.raw.fa);
+        Bouton sol= new Bouton("Sol", this, engine, R.id.sol_bulle, R.raw.sol);
+        Bouton la = new Bouton("La", this, engine, R.id.la_bulle, R.raw.la);
+        Bouton si = new Bouton("Si", this, engine, R.id.si_bulle, R.raw.si);
+
+
+
+    }
 }

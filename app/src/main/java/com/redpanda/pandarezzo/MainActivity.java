@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau1.class);
+                                LevelEditor.class);
                         startActivity(intent);
                         return false;
                     }
