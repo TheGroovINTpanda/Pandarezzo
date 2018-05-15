@@ -46,10 +46,12 @@ public class Note {
      * Permet de placer les notes sur la portée. Est appelé par le gameEngine lors de la création d'une portée
      * @param position Position de la note sur la portée.
      */
-    public void setPosition(int position){
+    public void setPosition(int position, boolean editionMode){
         //TODO fixer le pas-latteral
         int pas_latteral =  120; //Eccart entre deux notes sur la portée.
         int pas_horrizontal = 0;
+        if (editionMode)
+            pas_horrizontal = 220;
         int xNote = 0 + position * pas_latteral;
         int yNode = 0;             //Hauteur caractéristique d'une note.
         switch (name){

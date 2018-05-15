@@ -30,7 +30,8 @@ public class GameEngine {
         this.panda=new Panda(activity);
         this.editionMode = editionMode;
         this.noteToComplete = 0;
-//        createStave();
+        if (!editionMode)
+            createStave();
     }
 
     /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
@@ -126,13 +127,13 @@ public class GameEngine {
         for(String note : nameNextNotes){
             int i = nextNotes.size();
             setNextNote(createNote(note,i));
-            nextNotes.get(i).setPosition(i);
+            nextNotes.get(i).setPosition(i,editionMode);
         }
     }
 
     private void edition(){
-        this.editionMode=false;
         createStave();
+        this.editionMode=false;
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
