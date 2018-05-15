@@ -2,6 +2,7 @@ package com.redpanda.pandarezzo.niveaux;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -27,28 +28,33 @@ import java.util.ArrayList;
 
 public class Niveau1 extends Niveau {
 
-
+    private AnimationDrawable pandaAnimation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1);
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
+        ImageView panda=findViewById(R.id.pandamignon);
+        panda.setBackgroundResource(R.drawable.panda_animation);
+        pandaAnimation = (AnimationDrawable) panda.getBackground();
+
+        panda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pandaAnimation.start();
+            }
+        });
+
         GameEngine engine = new GameEngine(this);
+
 
         /** Renseigner la portée de ce niveau dans level. */
 
         String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
 
         engine.createStave(level);
-        //TODO Redimentionner les notes et les implémenter
-        Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
-        Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
-        Bouton mi = new Bouton("Mi", this, engine, R.id.mi_bulle, R.raw.mi);
-        Bouton fa = new Bouton("Fa", this, engine, R.id.fa_bulle, R.raw.fa);
-        Bouton sol= new Bouton("Sol", this, engine, R.id.sol_bulle, R.raw.sol);
-        Bouton la = new Bouton("La", this, engine, R.id.la_bulle, R.raw.la);
-        Bouton si = new Bouton("Si", this, engine, R.id.si_bulle, R.raw.si);
+
 
 
     }
