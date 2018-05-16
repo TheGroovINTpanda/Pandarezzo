@@ -2,9 +2,10 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-public class DancingNote {
+public class DancingNote extends AppCompatActivity{
     private ImageView noteView;
     private AnimationDrawable dancingNote;
 

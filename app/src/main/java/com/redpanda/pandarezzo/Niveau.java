@@ -14,12 +14,10 @@ public class Niveau extends AppCompatActivity{
     private Bouton[] boutons;
     private int Score;
     private Panda panda;
-    private boolean levelIsFinished;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau);
-        levelIsFinished=false;
 
         /** Renseigner la portée de ce niveau dans level. */
 
@@ -35,23 +33,6 @@ public class Niveau extends AppCompatActivity{
         Bouton sol = new Bouton("Sol", this, engine, R.id.sol_bulle, R.raw.sol);
         Bouton la = new Bouton("La", this, engine, R.id.la_bulle, R.raw.la);
         Bouton si = new Bouton("Si", this, engine, R.id.si_bulle, R.raw.si);
-        //TODO: savoir quand est-ce que le level est terminé, passer par le gameEngine?
-        if(levelIsFinished){
-            setContentView(R.layout.final_note_dancing);
-            DancingNote dancingNote=new DancingNote(this);
-            dancingNote.move();
-            Button button = (Button) findViewById(R.id.nextLevel);
-            button.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent) {
-                    Intent intent = new Intent(Niveau.this,Niveau.class);
-                    startActivity(intent);
-                    return false;
-                }
-
-            });
-
-        }
     }
     @Override
     public String toString() {

@@ -2,6 +2,10 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -113,8 +117,7 @@ public class GameEngine {
                     panda.animate(false);
                 }
             } else {
-                reInit();
-                panda.animate(false);
+                endLevel();
             }
         }
     }
@@ -137,6 +140,26 @@ public class GameEngine {
     private void edition(){
         createStave();
         this.editionMode=false;
+    }
+
+    /**
+     * Méthode à appeler à la fin du niverau pour lancé l'écran de score.
+     */
+
+    private void endLevel() {
+        activity.setContentView(R.layout.final_note_dancing);
+        DancingNote dancingNote = new DancingNote(activity);
+        dancingNote.move();
+        Button button = (Button) activity.findViewById(R.id.nextLevel);
+        button.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Intent intent = new Intent(activity, DancingNote.class);
+                activity.startActivity(intent);
+                return false;
+            }
+
+        });
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
