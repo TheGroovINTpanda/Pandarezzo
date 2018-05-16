@@ -27,10 +27,11 @@ public class Panda  {
 
     public void animate(boolean correct) {
         if(correct) {
+//            pandaView.setVisibility(View.INVISIBLE);
             pandaAnimation.start();
         }
         else{
-            pandaView.setImageResource(R.drawable.panda_leve_2_bras_00_resize);
+            pandaView.setImageResource(R.drawable.panda_leve_2_bras_000_resize);
         }
     }
 
