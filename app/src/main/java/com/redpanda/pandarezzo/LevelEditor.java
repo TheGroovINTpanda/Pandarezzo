@@ -13,7 +13,7 @@ public class LevelEditor extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.niveau1);
+        setContentView(R.layout.niveau);
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
         /** Renseigner la portée de ce niveau dans level. */

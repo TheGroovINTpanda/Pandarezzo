@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.redpanda.pandarezzo.niveaux.Niveau1;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
 
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau1.class);
+                                Niveau.class);
                         startActivity(intent);
                         return false;
                     }
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 //TODO Renseigner la classe.
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau1.class);
+                                Niveau.class);
                         startActivity(intent);
                         return false;
                     }
