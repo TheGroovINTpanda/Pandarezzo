@@ -1,13 +1,7 @@
 package com.redpanda.pandarezzo;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.AnimationDrawable;
-import android.view.View;
 import android.widget.ImageView;
 
 public class Panda  {
@@ -19,7 +13,7 @@ public class Panda  {
 
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
-        pandaView.setBackgroundResource(R.drawable.panda_animation);
+        pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
         pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
 
