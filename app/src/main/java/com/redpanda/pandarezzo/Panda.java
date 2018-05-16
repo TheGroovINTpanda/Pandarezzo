@@ -6,27 +6,31 @@ import android.widget.ImageView;
 
 public class Panda  {
     private ImageView pandaView;
-    private AnimationDrawable pandaAnimationCorrect;
-    private AnimationDrawable pandaAnimationIncorrect;
+    private AnimationDrawable pandaAnimation;
 
 
 
 
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
-        pandaAnimationCorrect = (AnimationDrawable) activity.findViewById(R.drawable)
+        pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
+        pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
 
 
 
     public void animate(boolean correct) {
         if(correct) {
-            pandaView.setBackgroundResource(R.drawable.panda_animation);
-            pandaAnimationCorrect.start();
+            pandaAnimation.stop();
+            pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
+            pandaAnimation=(AnimationDrawable)pandaView.getBackground();
+            pandaAnimation.start();
         }
         else{
-            pandaView.setBackgroundResource(R.drawable.panda_animation);
-            pandaAnimationCorrect.stop();
+            pandaAnimation.stop();
+            pandaView.setBackgroundResource(R.drawable.panda_animation_incorrect);
+            pandaAnimation=(AnimationDrawable)pandaView.getBackground();
+            pandaAnimation.start();
         }
     }
 

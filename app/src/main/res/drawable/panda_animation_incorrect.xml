@@ -1,0 +1,10 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_05_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_05_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_04_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_04_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_03_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_03_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_02_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_02_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_01_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_01_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_00_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_00_resize" android:duration="200000000" />
+</animation-list>
