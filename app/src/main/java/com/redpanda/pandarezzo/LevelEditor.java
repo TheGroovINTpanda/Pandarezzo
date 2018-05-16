@@ -1,13 +1,13 @@
-package com.redpanda.pandarezzo.niveaux;
+package com.redpanda.pandarezzo;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.redpanda.pandarezzo.Bouton;
-import com.redpanda.pandarezzo.GameEngine;
-import com.redpanda.pandarezzo.Niveau;
-import com.redpanda.pandarezzo.R;
+/**
+ * Created by sam on 15/05/18.
+ */
 
-public class Niveau1 extends Niveau {
+public class LevelEditor extends AppCompatActivity{
 
 
     @Override
@@ -16,22 +16,17 @@ public class Niveau1 extends Niveau {
         setContentView(R.layout.niveau1);
 //        Note do2Note = new Note("Do", this,  R.id.noteNoire7,R.drawable.do_noire);
 
-
-
-
-
         /** Renseigner la portée de ce niveau dans level. */
 
-//        String[] level = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
-//        String[] level = {"Si","Mi","La","Ré","Sol","Do","Fa"};
-        String[] level = {"Mi","Mi","Fa","Sol","La","Ré","Do"};
-
-        GameEngine engine = new GameEngine(this, level, false);
 
 
+        String[] level = {"Do","Do","Do","Do","Do","Do","Do",};
 
 
-        //TODO Redimentionner les notes et les implémenter
+        GameEngine engine = new GameEngine(this, level, true);
+
+
+//TODO Redimentionner les notes et les implémenter
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
         Bouton re = new Bouton("Ré", this, engine, R.id.re_bulle, R.raw.re);
         Bouton mi = new Bouton("Mi", this, engine, R.id.mi_bulle, R.raw.mi);
@@ -42,20 +37,5 @@ public class Niveau1 extends Niveau {
 
 
 
-    }
-
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void setScore() {
-
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }

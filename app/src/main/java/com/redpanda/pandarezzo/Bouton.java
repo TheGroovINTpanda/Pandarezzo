@@ -51,10 +51,6 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
         });
     }
 
-    public void clic() {
-
-    }
-
     //commentaire plus détaillé
     @Override
     public String toString() {
