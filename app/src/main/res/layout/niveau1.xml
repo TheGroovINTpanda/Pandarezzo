@@ -203,19 +203,20 @@
         app:srcCompat="@drawable/note_noir_resize" />
 
     <ImageView
-        android:id="@+id/panda_mignon"
-        android:layout_width="182dp"
-        android:layout_height="205dp"
+        android:id="@+id/pandamignon"
+        android:layout_width="175dp"
+        android:layout_height="228dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303"
-        app:srcCompat="@drawable/pitit_panda_tout_mignon" />
+        app:layout_constraintVertical_bias="0.921"
+        app:srcCompat="@drawable/panda_leve_2_bras_00_resize" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -238,5 +239,6 @@
 
     Ecart entre les noires : 25 dp
     -->
+
 </android.support.constraint.ConstraintLayout>
 
