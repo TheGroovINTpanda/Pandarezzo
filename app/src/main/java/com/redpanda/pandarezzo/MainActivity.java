@@ -6,15 +6,13 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import com.redpanda.pandarezzo.niveaux.Niveau1;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
 
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau1.class);
+                                Niveau.class);
                         startActivity(intent);
                         return false;
                     }
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 //TODO Renseigner la classe.
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau1.class);
+                                Niveau.class);
                         startActivity(intent);
                         return false;
                     }
@@ -66,20 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
-
-
-
-//        LinearLayout linearLayout = new LinearLayout(this);
-//        linearLayout.addView(findViewById(R.id.buttonstart));
-//        ImageView note = new ImageView(this);
-//        note.setImageResource(R.drawable.la_noire);
-//        linearLayout.addView(note);
-//        linearLayout.addView(note);
-//        setContentView(linearLayout);
-//                setContentView(note);
     }
 
     //à chaque fois que la fenêtre passe en avant plan

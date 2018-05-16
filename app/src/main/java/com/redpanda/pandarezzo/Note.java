@@ -2,15 +2,7 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class Note {
     private String name;
@@ -47,7 +39,6 @@ public class Note {
      * @param position Position de la note sur la portée.
      */
     public void setPosition(int position, boolean editionMode){
-        //TODO fixer le pas-latteral
         int pas_latteral =  120; //Eccart entre deux notes sur la portée.
         int pas_horrizontal = 40;
         int origine_latteral = 0;
@@ -131,13 +122,6 @@ public class Note {
         noteView.setX(y);
     }
 
-    public void init() {
-//        AssetManager manager = activity.getAssets();
-//        noteNoireBitmap = BitmapFactory.decodeStream(manager.open("la_noire.png"));
-//        noteNoire.setImageBitmap(noteNoireBitmap);
-//        activity.addContentView(noteImage, new LinearLayout.LayoutParams(100,100));
-//        activity.setContentView(noteNoire);
-    }
 
     public void getPosition(){
         System.out.println(noteView.getX());

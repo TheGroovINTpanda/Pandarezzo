@@ -1,39 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.redpanda.pandarezzo.MainActivity"
+    android:background="@drawable/fond_niveau_refait">
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imageView"-->
-    <!--android:layout_width="218dp"-->
-    <!--android:layout_height="164dp"-->
-    <!--android:layout_marginStart="96dp"-->
-    <!--android:layout_marginTop="240dp"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:srcCompat="@drawable/redpanda" />-->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PANDA"
-        android:textSize="42sp"
+
+    <ImageButton
+        android:id="@+id/re_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/re_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.549" />
+
+    <ImageButton
+        android:id="@+id/mi_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/mi_bulle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.455" />
 
     <ImageButton
-        android:id="@+id/imageButton_do"
-        android:layout_width="139dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="44dp"
-        android:scaleType="fitStart"
+        android:id="@+id/fa_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/fa_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.549" />
+
+    <ImageButton
+        android:id="@+id/sol_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/sol_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <ImageButton
+        android:id="@+id/la_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/la_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+    <ImageButton
+        android:id="@+id/si_bulle"
+        android:layout_width="114dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/si_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988" />
+
+
+    <ImageButton
+        android:id="@+id/do_bulle"
+        android:layout_width="114dp"
+        android:layout_height="78dp"
+        android:backgroundTint="@color/transparant"
+        android:scaleType="fitXY"
+        android:src="@drawable/do_bulle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+
+<!--
+    <TextView
+        android:id="@+id/textViewDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="4dp"
+        android:text="Level 1"
+        android:textSize="42sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/do_bulle" />
+        app:layout_constraintTop_toTopOf="parent" />
+-->
+    <ImageView
+        android:id="@+id/imageViewPortee_resize"
+        android:layout_width="335dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_portee_resize" />
+
+
+    <ImageView
+        android:id="@+id/noteNoire"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire1"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire2"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire3"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire4"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire5"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/noteNoire6"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_noir_resize" />
+
+    <ImageView
+        android:id="@+id/pandaMignon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sol_bulle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPortee_resize"
+        app:layout_constraintVertical_bias="0.79"
+        app:srcCompat="@drawable/panda_leve_2_bras_000_resize" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="77dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cle_de_sol" />
+
+    <!--
+    Index pour les notes: (margin top)
+    mi -> 62dp
+    fa -> 56dp
+    sol -> 50dp
+    la -> 44dp
+    si -> 39dp
+    do -> 34dp
+    re -> 28dp
+
+    Ecart entre les noires : 25 dp
+    -->
 
 </android.support.constraint.ConstraintLayout>
+
