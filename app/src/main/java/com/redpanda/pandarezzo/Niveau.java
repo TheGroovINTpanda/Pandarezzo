@@ -7,7 +7,6 @@ public class Niveau extends AppCompatActivity{
 
     private String name;
     //background;
-    private Portee portee;
     private Bouton[] boutons;
     private int Score;
     private Panda panda;
