@@ -7,12 +7,14 @@ import android.widget.ImageView;
 public class Panda  {
     private ImageView pandaView;
     private AnimationDrawable pandaAnimation;
+    private boolean wasCorrectBefore;
 
 
 
 
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
+        this.wasCorrectBefore=false;
         pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
         pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
@@ -20,17 +22,21 @@ public class Panda  {
 
 
     public void animate(boolean correct) {
-        if(correct) {
+        if(correct && !(wasCorrectBefore)) {
             pandaAnimation.stop();
             pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
             pandaAnimation=(AnimationDrawable)pandaView.getBackground();
             pandaAnimation.start();
+            wasCorrectBefore = true;
         }
         else{
-            pandaAnimation.stop();
-            pandaView.setBackgroundResource(R.drawable.panda_animation_incorrect);
-            pandaAnimation=(AnimationDrawable)pandaView.getBackground();
-            pandaAnimation.start();
+            if(!(correct) && wasCorrectBefore) {
+                pandaAnimation.stop();
+                pandaView.setBackgroundResource(R.drawable.panda_animation_incorrect);
+                pandaAnimation = (AnimationDrawable) pandaView.getBackground();
+                pandaAnimation.start();
+                wasCorrectBefore = false;
+            }
         }
     }
 
