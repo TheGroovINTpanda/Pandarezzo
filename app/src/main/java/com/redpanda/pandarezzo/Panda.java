@@ -1,37 +1,32 @@
 package com.redpanda.pandarezzo;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.AnimationDrawable;
-import android.view.View;
 import android.widget.ImageView;
 
 public class Panda  {
     private ImageView pandaView;
-    private AnimationDrawable pandaAnimation;
+    private AnimationDrawable pandaAnimationCorrect;
+    private AnimationDrawable pandaAnimationIncorrect;
 
 
 
 
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
-        pandaView.setBackgroundResource(R.drawable.panda_animation);
-        pandaAnimation = (AnimationDrawable) pandaView.getBackground();
+        pandaAnimationCorrect = (AnimationDrawable) activity.findViewById(R.drawable)
     }
 
 
 
     public void animate(boolean correct) {
         if(correct) {
-//            pandaView.setVisibility(View.INVISIBLE);
-            pandaAnimation.start();
+            pandaView.setBackgroundResource(R.drawable.panda_animation);
+            pandaAnimationCorrect.start();
         }
         else{
-            pandaView.setImageResource(R.drawable.panda_leve_2_bras_000_resize);
+            pandaView.setBackgroundResource(R.drawable.panda_animation);
+            pandaAnimationCorrect.stop();
         }
     }
 

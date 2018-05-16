@@ -6,5 +6,5 @@
     <item android:drawable="@drawable/panda_leve_2_bras_03_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_03_resize" android:duration="200" />
     <item android:drawable="@drawable/panda_leve_2_bras_04_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_04_resize" android:duration="200" />
     <item android:drawable="@drawable/panda_leve_2_bras_05_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_05_resize" android:duration="200" />
-    <item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200" />
+    <item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200" /><item android:drawable="@drawable/panda_leve_2_bras_06_resize" android:duration="200000000" />
 </animation-list>
