@@ -9,17 +9,12 @@ public class Panda  {
     private AnimationDrawable pandaAnimation;
     private boolean wasCorrectBefore;
 
-
-
-
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
         this.wasCorrectBefore=false;
         pandaView.setBackgroundResource(R.drawable.panda_animation_correct);
         pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
-
-
 
     public void animate(boolean correct) {
         if(correct && !(wasCorrectBefore)) {
@@ -39,5 +34,4 @@ public class Panda  {
             }
         }
     }
-
 }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,20 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
-
-
-
-//        LinearLayout linearLayout = new LinearLayout(this);
-//        linearLayout.addView(findViewById(R.id.buttonstart));
-//        ImageView note = new ImageView(this);
-//        note.setImageResource(R.drawable.la_noire);
-//        linearLayout.addView(note);
-//        linearLayout.addView(note);
-//        setContentView(linearLayout);
-//                setContentView(note);
     }
 
     //à chaque fois que la fenêtre passe en avant plan

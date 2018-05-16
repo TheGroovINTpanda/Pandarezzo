@@ -18,8 +18,9 @@ public class GameEngine {
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
-    graphique est créée)
+    graphique est créée).
      On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
+     Un mode edition est maintenant disponible.
      */
     public GameEngine(Activity activity, String[] nameNextNotes, boolean editionMode){
         this.activity = activity;
@@ -111,7 +112,6 @@ public class GameEngine {
                     reInit();
                     panda.animate(false);
                 }
-
             } else {
                 reInit();
                 panda.animate(false);
@@ -131,6 +131,9 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Permet d'éditer un niveau avant de le jouer.
+     */
     private void edition(){
         createStave();
         this.editionMode=false;
@@ -156,8 +159,4 @@ public class GameEngine {
         return nextNotes;
     }
 
-
-    public void setNextNotes(ArrayList<Note> nextNotes) {
-        this.nextNotes = nextNotes;
-    }
 }
