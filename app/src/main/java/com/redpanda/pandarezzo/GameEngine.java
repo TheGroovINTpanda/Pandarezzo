@@ -147,6 +147,7 @@ public class GameEngine {
     /** Replace et remet la textures noire de toutes les notes. */
 
     public void reInit(){
+        ip=0; //on recommence la portée si on fait une erreur
         for(Note note: nextNotes){
             note.switchColor(true);
         }
