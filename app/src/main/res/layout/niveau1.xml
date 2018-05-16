@@ -217,17 +217,26 @@
         app:layout_constraintVertical_bias="0.303"
         app:srcCompat="@drawable/pitit_panda_tout_mignon" />
 
-<!--
-Index pour les notes: (margin top)
-mi -> 62dp
-fa -> 56dp
-sol -> 50dp
-la -> 44dp
-si -> 39dp
-do -> 34dp
-re -> 28dp
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="77dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cle_de_sol" />
 
-Ecart entre les noires : 25 dp
--->
+    <!--
+    Index pour les notes: (margin top)
+    mi -> 62dp
+    fa -> 56dp
+    sol -> 50dp
+    la -> 44dp
+    si -> 39dp
+    do -> 34dp
+    re -> 28dp
+
+    Ecart entre les noires : 25 dp
+    -->
 </android.support.constraint.ConstraintLayout>
 

@@ -49,10 +49,14 @@ public class Note {
     public void setPosition(int position, boolean editionMode){
         //TODO fixer le pas-latteral
         int pas_latteral =  120; //Eccart entre deux notes sur la portée.
-        int pas_horrizontal = 0;
-        if (editionMode)
+        int pas_horrizontal = 40;
+        int origine_latteral = 0;
+        if (editionMode) {
+            pas_latteral =  120; //Eccart entre deux notes sur la portée.
             pas_horrizontal = 220;
-        int xNote = 0 + position * pas_latteral;
+            origine_latteral = 100;
+        }
+        int xNote = origine_latteral + position * pas_latteral;
         int yNode = 0;             //Hauteur caractéristique d'une note.
         switch (name){
             case "Do":
