@@ -1,44 +1,75 @@
 package com.redpanda.pandarezzo;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 import com.redpanda.pandarezzo.niveaux.Niveau1;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GameEngine gameEngine;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //         setContentView(R.layout.niveau);
 
         Button button = (Button) findViewById(R.id.buttonstart);
 
+
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                TextView text = (TextView) findViewById(R.id.textView);
-                text.setText("Wait a moment");
-                Intent intent = new Intent(MainActivity.this,
-                        Niveau1.class);
-                startActivity(intent);
+//                TextView text = (TextView) findViewById(R.id.textView);
+//                text.setText("Wait a moment");
+
+                setContentView(R.layout.menu_selection);
+                Button buttonNiveaux = (Button) findViewById(R.id.niveaux);
+                Button buttonEditeur = (Button) findViewById(R.id.editeur);
+                Button buttonResources = (Button) findViewById(R.id.resources);
+                buttonNiveaux.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                        Intent intent = new Intent(MainActivity.this,
+                                Niveau1.class);
+                        startActivity(intent);
+                        return false;
+                    }
+                });
+
+                buttonEditeur.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                        Intent intent = new Intent(MainActivity.this,
+                                LevelEditor.class);
+                        startActivity(intent);
+                        return false;
+                    }
+                });
+
+                buttonResources.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+//TODO Renseigner la classe.
+                        Intent intent = new Intent(MainActivity.this,
+                                Niveau1.class);
+                        startActivity(intent);
+                        return false;
+                    }
+                });
                 return false;
             }
         });
+
+
+
+
 
 
 //        LinearLayout linearLayout = new LinearLayout(this);
