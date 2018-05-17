@@ -14,6 +14,13 @@ public class Cours extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cours);
+        Button FlecheDroite = (Button) findViewById(R.id.flech_texte);
+        FlecheDroite.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.i("OC_RSS", "Cliquer ici");
+            }
+        });
 
     }
 }
