@@ -20,3 +20,5 @@ android:background="@drawable/first_lesson_01">
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
+
+</android.support.constraint.ConstraintLayout>
