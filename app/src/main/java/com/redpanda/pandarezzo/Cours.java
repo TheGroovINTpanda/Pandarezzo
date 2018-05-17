@@ -1,8 +1,10 @@
 package com.redpanda.pandarezzo;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by samuel on 17/05/18.
@@ -14,13 +16,12 @@ public class Cours extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cours);
-        Button FlecheDroite = (Button) findViewById(R.id.flech_texte);
-        FlecheDroite.setOnClickListener(new View.OnClickListener(){
+        ImageButton flecheDroite = (ImageButton) findViewById(R.id.flech_texte);
+        flecheDroite.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Log.i("OC_RSS", "Cliquer ici");
+            public void onClick(View view) {
+                //TODO mettre action du bouton
             }
         });
-
     }
 }
