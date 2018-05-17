@@ -16,11 +16,15 @@ public class Cours extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cours);
-        ImageButton flecheDroite = (ImageButton) findViewById(R.id.flech_texte);
-        flecheDroite.setOnClickListener(new View.OnClickListener() {
+        int[] views = new int[]{};
+        //TODO remplir views
+        ImageButton flecheTexte = (ImageButton) findViewById(R.id.flech_texte);
+        flecheTexte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO mettre action du bouton
+                setContentView(R.layout.cours2);
+                ImageButton flecheGauche = (ImageButton) findViewById(R.id.fleche_gauche);
+                ImageButton flecheDroite = (ImageButton) findViewById(R.id.fleche_droite);
             }
         });
     }
