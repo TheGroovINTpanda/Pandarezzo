@@ -20,6 +20,7 @@
             android:label="Nouvelle Activité"
         </activity>
         <activity android:name=".LevelEditor"></activity>
+        <activity android:name=".Cours"></activity>
     </application>
 
 </manifest>
