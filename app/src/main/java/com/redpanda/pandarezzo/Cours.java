@@ -15,7 +15,13 @@ import android.widget.ImageView;
 public class Cours extends AppCompatActivity {
 
     private int i = 0;
-    private int[] views = {R.drawable.first_lesson_02, R.drawable.first_lesson_03, R.drawable.first_lesson_04};
+    private int[] views = {R.drawable.first_lesson_02, R.drawable.first_lesson_03, R.drawable.first_lesson_04, R.drawable.first_lesson_05,
+            R.drawable.first_lesson_06, R.drawable.first_lesson_07, R.drawable.first_lesson_08, R.drawable.first_lesson_09,
+            R.drawable.first_lesson_10, R.drawable.first_lesson_11, R.drawable.first_lesson_12, R.drawable.first_lesson_13, R.drawable.first_lesson_14,
+            R.drawable.first_lesson_15, R.drawable.first_lesson_16, R.drawable.first_lesson_17, R.drawable.first_lesson_18, R.drawable.first_lesson_19,
+            R.drawable.first_lesson_20, R.drawable.first_lesson_21, R.drawable.first_lesson_22, R.drawable.first_lesson_23, R.drawable.first_lesson_24,
+            R.drawable.first_lesson_25, R.drawable.first_lesson_26
+    };
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
