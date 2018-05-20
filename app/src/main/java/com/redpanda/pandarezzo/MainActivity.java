@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 buttonResources.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
-//TODO Renseigner la classe.
                         Intent intent = new Intent(MainActivity.this,
-                                Niveau.class);
+                                Cours.class);
                         startActivity(intent);
                         return false;
                     }

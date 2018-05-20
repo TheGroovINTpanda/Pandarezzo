@@ -113,7 +113,7 @@ public class Note {
         noteView.setX(getX());
         noteView.setY(getY());
     }
-    /** Permet de positionner une note au coordonnées (x,y) */
+    /** Permet de positionner une note aux coordonnées (x,y) */
 
     public void moveAbsolute(int x, int y){
         this.setX(x);
