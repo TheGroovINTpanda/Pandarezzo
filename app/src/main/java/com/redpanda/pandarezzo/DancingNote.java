@@ -12,7 +12,6 @@ public class DancingNote extends AppCompatActivity{
 
     public DancingNote(Activity activity){
         this.noteView = activity.findViewById(R.id.dancingNote);
-        //TODO: changer l'image de la noteView ansi que le fichier dancing_note.xml
         noteView.setBackgroundResource(R.drawable.dancing_note);
         dancingNote= (AnimationDrawable) noteView.getBackground();
     }
