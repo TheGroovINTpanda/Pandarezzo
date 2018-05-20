@@ -9,17 +9,21 @@
 
     <Button
         android:id="@+id/nextLevel"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="Niveau suivant"
-        tools:layout_editor_absoluteX="265dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="411dp" />
 
     <ImageView
         android:id="@+id/dancingNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/note_bras_ecartes"
-        tools:layout_editor_absoluteX="16dp"
+        app:srcCompat="@drawable/dancing_note"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
 </android.support.constraint.ConstraintLayout>
