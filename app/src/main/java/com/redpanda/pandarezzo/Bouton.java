@@ -24,7 +24,7 @@ public class Bouton extends android.support.v7.widget.AppCompatImageButton {
 
     /**
      * Gère les actions du bouton dans la méthode onTouch.
-     * Le constructeur se charge d'instancier la note associé au bouton.
+     * Le constructeur se charge d'instancier la note associée au bouton.
      */
 
     public Bouton(final String name, final Activity activity, final GameEngine engine, int buttonRef, int sonRef) {

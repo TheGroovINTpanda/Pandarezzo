@@ -14,7 +14,7 @@ public class Son {
         this.sonRef = sonRef;
     }
 
-    /**Cette methode permet de jouer le son de la note, elle sera activé dès que l'utilisateur apuyera sur le bouton,
+    /**Cette methode permet de jouer le son de la note, elle sera activée dès que l'utilisateur appuiera sur le bouton,
      * la methode est instenciée pour libérer la ressource dès que le fichier joué est terminé.
      *
      */

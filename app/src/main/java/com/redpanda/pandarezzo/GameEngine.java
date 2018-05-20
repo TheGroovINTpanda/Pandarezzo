@@ -66,7 +66,7 @@ public class GameEngine {
         }
     }
 
-    /** Gére l'appuis sur un boutton. Si on est dans le mode edition on compose la partition, sinon
+    /** Gére l'appui sur un boutton. Si on est dans le mode édition on compose la partition, sinon
      * on apprend le morceau en le jouant.
      * */
 
@@ -120,7 +120,7 @@ public class GameEngine {
     }
 
     /**
-     *  Permet de créer une portée, il sufit de rentrer le nom des notes dans l'ordre souhaité
+     *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité
      */
 
     public void createStave(){
@@ -147,7 +147,7 @@ public class GameEngine {
 
     /** Donne la prochaine note à jouer
 
-    /** Replace et remet la textures noire de toutes les notes. */
+    /** Replace et remet la texture noire de toutes les notes. */
 
     public void reInit(){
         ip=0; //on recommence la portée si on fait une erreur
