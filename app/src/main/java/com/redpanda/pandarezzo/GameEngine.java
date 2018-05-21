@@ -39,7 +39,7 @@ public class GameEngine {
             createStave();
     }
 
-    /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
+    /** Méthode appelée par le gameEngine pour créer de nouvelle notes.
      *
      * @param name
      * @param i numéro de la note qu'on veut créer
@@ -70,7 +70,7 @@ public class GameEngine {
         }
     }
 
-    /** Gére l'appui sur un boutton. Si on est dans le mode édition on compose la partition, sinon
+    /** Gère l'appui sur un boutton. Si on est dans le mode édition on compose la partition, sinon
      * on apprend le morceau en le jouant.
      * */
 
@@ -123,7 +123,7 @@ public class GameEngine {
     }
 
     /**
-     *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité
+     *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité.
      */
 
     public void createStave(){
@@ -143,7 +143,7 @@ public class GameEngine {
     }
 
     /**
-     * Méthode à appeler à la fin du niverau pour lancé l'écran de score.
+     * Méthode à appeler à la fin du niveau pour lancer l'écran de score.
      */
 
     private void endLevel() {
@@ -168,7 +168,6 @@ public class GameEngine {
         nextNotes.add(note);
     }
 
-    /** Donne la prochaine note à jouer
 
     /** Replace et remet la texture noire de toutes les notes. */
 
