@@ -13,12 +13,13 @@ public class GameEngine {
 
     private Activity activity;
     private Context context;
-    private String[] nameNextNotes;
+    private ArrayList<String[]> nameNextNotes;
     private ArrayList<Note> nextNotes; //liste des notes constituant un morceau.
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
     private boolean editionMode;
     private int noteToComplete; //Nombre de note pour compléter le morceau.
+    private int numLevel; //Numéro du niveau en cours
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -26,17 +27,14 @@ public class GameEngine {
      On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      Un mode edition est maintenant disponible.
      */
-    public GameEngine(Activity activity, String[] nameNextNotes, boolean editionMode){
+    public GameEngine(Activity activity, ArrayList<String[]> nameNextNotes, boolean editionMode){
         this.activity = activity;
         this.context= activity.getApplicationContext();
         this.nameNextNotes = nameNextNotes;
-        this.nextNotes = new ArrayList<>() ;
-        this.ip = 0;
         this.panda=new Panda(activity);
         this.editionMode = editionMode;
-        this.noteToComplete = 0;
-        if (!editionMode)
-            createStave();
+        this.numLevel=0;
+        init(editionMode);
     }
 
     /** Méthode appelée par le gameEngine pour créer de nouvelle notes.
@@ -46,7 +44,7 @@ public class GameEngine {
      * @return
      */
 
-    public Note createNote(String name, int i){
+    private Note createNote(String name, int i){
         int[] noteID = {R.id.noteNoire, R.id.noteNoire1, R.id.noteNoire2, R.id.noteNoire3, R.id.noteNoire4,
                 R.id.noteNoire5, R.id.noteNoire6};
         switch (name){
@@ -76,7 +74,7 @@ public class GameEngine {
 
     public void touched(String bouton) {
         if (editionMode){
-            nameNextNotes[noteToComplete] = bouton;
+            nameNextNotes.get(numLevel)[noteToComplete] = bouton;
             noteToComplete++;
             if (noteToComplete == 7){
                 edition();
@@ -126,8 +124,8 @@ public class GameEngine {
      *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité.
      */
 
-    public void createStave(){
-        for(String note : nameNextNotes){
+    private void createStave(){
+        for(String note : nameNextNotes.get(numLevel)){
             int i = nextNotes.size();
             setNextNote(createNote(note,i));
             nextNotes.get(i).setPosition(i,editionMode);
@@ -154,8 +152,11 @@ public class GameEngine {
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                Intent intent = new Intent(activity, DancingNote.class);
-                activity.startActivity(intent);
+                if (numLevel<nameNextNotes.size()) {
+                    numLevel++;
+                    init(false);
+                    activity.setContentView(R.layout.niveau);
+                }
                 return false;
             }
 
@@ -169,9 +170,19 @@ public class GameEngine {
     }
 
 
+    /** Initialise le GaeEngine en début de niveau */
+
+    private void init(boolean editionMode) {
+        this.nextNotes = new ArrayList<>() ;
+        this.ip = 0;
+        this.noteToComplete = 0;
+        if (!editionMode)
+            createStave();
+    }
+
     /** Replace et remet la texture noire de toutes les notes. */
 
-    public void reInit(){
+    private void reInit(){
         ip=0; //on recommence la portée si on fait une erreur
         for(Note note: nextNotes){
             note.switchColor(true);
