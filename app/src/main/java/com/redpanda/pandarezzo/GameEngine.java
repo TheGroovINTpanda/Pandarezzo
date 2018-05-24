@@ -2,19 +2,25 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class GameEngine {
 
+    private Niveau niveau;
     private Activity activity;
     private Context context;
-    private String[] nameNextNotes;
+    private ArrayList<String[]> nameNextNotes;
     private ArrayList<Note> nextNotes; //liste des notes constituant un morceau.
     private int ip; //indice portée donnant l'avancée dans le morceau.
     private Panda panda;
+    private boolean editionModeActive;
     private boolean editionMode;
     private int noteToComplete; //Nombre de note pour compléter le morceau.
+    private int numLevel; //Numéro du niveau en cours
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -22,27 +28,26 @@ public class GameEngine {
      On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      Un mode edition est maintenant disponible.
      */
-    public GameEngine(Activity activity, String[] nameNextNotes, boolean editionMode){
+    public GameEngine(Niveau niveau, Activity activity, ArrayList<String[]> nameNextNotes, boolean editionModeActive, int numLevel){
+        this.niveau = niveau;
         this.activity = activity;
         this.context= activity.getApplicationContext();
         this.nameNextNotes = nameNextNotes;
-        this.nextNotes = new ArrayList<>() ;
-        this.ip = 0;
         this.panda=new Panda(activity);
-        this.editionMode = editionMode;
-        this.noteToComplete = 0;
-        if (!editionMode)
-            createStave();
+        this.editionModeActive = editionModeActive;
+        this.editionMode = false;
+        this.numLevel=numLevel;
+        init(editionModeActive);
     }
 
-    /** Méthode appelé par le gameEngine pour créer de nouvelle notes.
+    /** Méthode appelée par le gameEngine pour créer de nouvelle notes.
      *
      * @param name
      * @param i numéro de la note qu'on veut créer
      * @return
      */
 
-    public Note createNote(String name, int i){
+    private Note createNote(String name, int i){
         int[] noteID = {R.id.noteNoire, R.id.noteNoire1, R.id.noteNoire2, R.id.noteNoire3, R.id.noteNoire4,
                 R.id.noteNoire5, R.id.noteNoire6};
         switch (name){
@@ -66,13 +71,13 @@ public class GameEngine {
         }
     }
 
-    /** Gére l'appui sur un boutton. Si on est dans le mode édition on compose la partition, sinon
+    /** Gère l'appui sur un boutton. Si on est dans le mode édition on compose la partition, sinon
      * on apprend le morceau en le jouant.
      * */
 
     public void touched(String bouton) {
-        if (editionMode){
-            nameNextNotes[noteToComplete] = bouton;
+        if (editionModeActive){
+            nameNextNotes.get(numLevel)[noteToComplete] = bouton;
             noteToComplete++;
             if (noteToComplete == 7){
                 edition();
@@ -113,21 +118,20 @@ public class GameEngine {
                     panda.animate(false);
                 }
             } else {
-                reInit();
-                panda.animate(false);
+                endLevel();
             }
         }
     }
 
     /**
-     *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité
+     *  Permet de créer une portée, il suffit de rentrer le nom des notes dans l'ordre souhaité.
      */
 
-    public void createStave(){
-        for(String note : nameNextNotes){
+    private void createStave(){
+        for(String note : nameNextNotes.get(numLevel)){
             int i = nextNotes.size();
             setNextNote(createNote(note,i));
-            nextNotes.get(i).setPosition(i,editionMode);
+            nextNotes.get(i).setPosition(i, editionModeActive);
         }
     }
 
@@ -136,7 +140,28 @@ public class GameEngine {
      */
     private void edition(){
         createStave();
-        this.editionMode=false;
+        this.editionModeActive =false;
+        this.editionMode = true;
+    }
+
+    /**
+     * Méthode à appeler à la fin du niveau pour lancer l'écran de score.
+     */
+
+    private void endLevel() {
+        activity.setContentView(R.layout.final_note_dancing);
+        DancingNote dancingNote = new DancingNote(activity);
+        dancingNote.move();
+        Button button = (Button) activity.findViewById(R.id.nextLevel);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (numLevel < nameNextNotes.size() - 1 && !(editionMode)) {
+                    numLevel++;
+                    niveau.restart(numLevel);
+                }
+            }
+        });
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
@@ -145,11 +170,20 @@ public class GameEngine {
         nextNotes.add(note);
     }
 
-    /** Donne la prochaine note à jouer
+
+    /** Initialise le GaeEngine en début de niveau */
+
+    private void init(boolean editionMode) {
+        this.nextNotes = new ArrayList<>() ;
+        this.ip = 0;
+        this.noteToComplete = 0;
+        if (!editionMode)
+            createStave();
+    }
 
     /** Replace et remet la texture noire de toutes les notes. */
 
-    public void reInit(){
+    private void reInit(){
         ip=0; //on recommence la portée si on fait une erreur
         for(Note note: nextNotes){
             note.switchColor(true);

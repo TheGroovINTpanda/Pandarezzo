@@ -1,27 +1,31 @@
 package com.redpanda.pandarezzo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import java.util.ArrayList;
 
 public class Niveau extends AppCompatActivity{
-
-    private String name;
-    //background;
-    private Bouton[] boutons;
-    private int Score;
-    private Panda panda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau);
 
+        int numLevel = getIntent().getIntExtra("level",0);
 
-        /** Renseigner la portée de ce niveau dans level. */
+        /** Renseigner les portées des niveau. */
 
-        String[] level = {"Mi", "Mi", "Fa", "Sol", "La", "Ré", "Do"};
+        ArrayList<String[]> niveaux = new ArrayList<>();
 
-        GameEngine engine = new GameEngine(this, level, false);
+        String[] level0 = {"Mi", "Mi", "Fa", "Sol", "La", "Ré", "Do"};
+        String[] level1 = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+        String[] level2 = {"Mi", "Ré", "Mi", "Si", "Ré", "Do", "La"};
+        niveaux.add(level0);
+        niveaux.add(level1);
+        niveaux.add(level2);
+
+        GameEngine engine = new GameEngine( this,this, niveaux, false, numLevel);
 
 
         Bouton d0 = new Bouton("Do", this, engine, R.id.do_bulle, R.raw.d0);
@@ -33,8 +37,11 @@ public class Niveau extends AppCompatActivity{
         Bouton si = new Bouton("Si", this, engine, R.id.si_bulle, R.raw.si);
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public void restart(int numLevel) {
+        Intent intent = new Intent( Niveau.this,
+                Niveau.class);
+        intent.putExtra("level",numLevel);
+        startActivity(intent);
     }
 }
+

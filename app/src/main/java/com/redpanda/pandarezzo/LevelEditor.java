@@ -3,6 +3,8 @@ package com.redpanda.pandarezzo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 /**
  * Created by sam on 15/05/18.
  */
@@ -19,11 +21,11 @@ public class LevelEditor extends AppCompatActivity{
         /** Renseigner la portée de ce niveau dans level. */
 
 
-
+        ArrayList<String[]> niveaux= new ArrayList<>();
         String[] level = {"Do","Do","Do","Do","Do","Do","Do",};
+        niveaux.add(level);
 
-
-        GameEngine engine = new GameEngine(this, level, true);
+        GameEngine engine = new GameEngine(null,this, niveaux, true, 0);
 
 
 //TODO Redimentionner les notes et les implémenter
