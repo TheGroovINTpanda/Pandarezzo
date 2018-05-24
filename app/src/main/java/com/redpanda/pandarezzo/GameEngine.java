@@ -156,7 +156,7 @@ public class GameEngine {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (numLevel < nameNextNotes.size() && !(editionMode)) {
+                if (numLevel < nameNextNotes.size() - 1 && !(editionMode)) {
                     numLevel++;
                     niveau.restart(numLevel);
                 }
