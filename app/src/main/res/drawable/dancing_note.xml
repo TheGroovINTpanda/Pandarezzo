@@ -1,7 +1,7 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="false">
-    <item android:drawable="@drawable/note_bras_ecartes" android:duration="2" /><item android:drawable="@drawable/note_bras_ecartes" android:duration="2" />
-    <item android:drawable="@drawable/note_bras_ecartes_2" android:duration="2" /><item android:drawable="@drawable/note_bras_ecartes_2" android:duration="2" />
-    <item android:drawable="@drawable/note_bras_ecartes_3" android:duration="2" /><item android:drawable="@drawable/note_bras_ecartes_3" android:duration="2" />
-    <item android:drawable="@drawable/note_bras_fermes" android:duration="2" /><item android:drawable="@drawable/note_bras_fermes" android:duration="2" />
+    <item android:drawable="@drawable/note_bras_ecartes" android:duration="50" /><item android:drawable="@drawable/note_bras_ecartes" android:duration="50" />
+    <item android:drawable="@drawable/note_bras_ecartes_2" android:duration="50" /><item android:drawable="@drawable/note_bras_ecartes_2" android:duration="50" />
+    <item android:drawable="@drawable/note_bras_ecartes_3" android:duration="50" /><item android:drawable="@drawable/note_bras_ecartes_3" android:duration="50" />
+    <item android:drawable="@drawable/note_bras_fermes" android:duration="50" /><item android:drawable="@drawable/note_bras_fermes" android:duration="50" />
 </animation-list>
