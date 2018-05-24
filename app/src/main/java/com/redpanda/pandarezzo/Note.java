@@ -28,10 +28,10 @@ public class Note {
         this.context = activity.getApplicationContext();
         this.noteView = activity.findViewById(id);
         this.refNote = noteRef;
-        x = noteView.getLeft();
-        y = noteView.getTop();
-        heigth = noteView.getHeight();
-        width = noteView.getWidth();
+        this.x = noteView.getLeft();
+        this.y = noteView.getTop();
+        this.heigth = noteView.getHeight();
+        this.width = noteView.getWidth();
     }
 
     /**

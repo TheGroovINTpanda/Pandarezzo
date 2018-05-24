@@ -154,13 +154,20 @@ public class GameEngine {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (numLevel<nameNextNotes.size()) {
                     numLevel++;
-                    init(false);
+                    reset();
                     activity.setContentView(R.layout.niveau);
                 }
                 return false;
             }
 
         });
+    }
+
+    private void reset() {
+        this.ip = 0;
+        this.noteToComplete = 0;
+        this.nextNotes.clear();
+        createStave();
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
