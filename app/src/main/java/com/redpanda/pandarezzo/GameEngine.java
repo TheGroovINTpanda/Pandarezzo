@@ -20,6 +20,7 @@ public class GameEngine {
     private boolean editionMode;
     private int noteToComplete; //Nombre de note pour compléter le morceau.
     private int numLevel; //Numéro du niveau en cours
+    private int nberreur; //score en cours
 
     /**
     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -34,6 +35,7 @@ public class GameEngine {
         this.panda=new Panda(activity);
         this.editionMode = editionMode;
         this.numLevel=0;
+        this.nberreur=0;
         init(editionMode);
     }
 
@@ -113,11 +115,24 @@ public class GameEngine {
                     System.out.print("Error");
                     reInit();
                     panda.animate(false);
+                    nberreur+=1;
                 }
             } else {
                 endLevel();
             }
         }
+    }
+
+    /**
+    * Permet de récupérer l'image correspondant à la performance de l'utilisateur à afficher sur
+     * le layout de fin de niveau à savoir 1, 2 ou 3 étoiles selon que l'utilisateur est fait respectivement
+     * aucune, plus d'une ou plus de trois fautes au cours du niveau
+    */
+    public void etoiles(){
+        if (nberreur==0){ }
+        if (nberreur<=3){}
+        if (nberreur<=5){}
+        else {}
     }
 
     /**
