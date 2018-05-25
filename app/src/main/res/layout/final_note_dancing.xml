@@ -28,8 +28,8 @@
         android:layout_width="350dp"
         android:layout_height="64dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="428dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="450dp"
         android:fontFamily="@font/bd_cartoon_shout"
         android:text="Congratulations!! "
         android:textColor="@color/rougeorange"
@@ -37,12 +37,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/dancingNote"
-        android:layout_width="216dp"
+        android:layout_width="215dp"
         android:layout_height="328dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -50,20 +50,26 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintVertical_bias="0.622"
         app:srcCompat="@drawable/panda_leve_2_bras_000_resize" />
 
     <ImageView
         android:id="@+id/etoiles"
         android:layout_width="280dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="384dp"
+        android:layout_marginBottom="272dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/etoiles_vides"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
