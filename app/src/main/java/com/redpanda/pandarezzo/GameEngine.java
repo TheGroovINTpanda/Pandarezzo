@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,8 +24,8 @@ public class GameEngine {
     private int numLevel; //Numéro du niveau en cours
 
     /**
-    Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
-    graphique est créée).
+     Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
+     graphique est créée).
      On renseigne dans un tableau le nom des notes qui vont constituer notre niveau.
      Un mode edition est maintenant disponible.
      */
@@ -150,6 +151,8 @@ public class GameEngine {
 
     private void endLevel() {
         activity.setContentView(R.layout.final_note_dancing);
+        TextView congrats=activity.findViewById(R.id.congrats);
+        congrats.setVisibility(View.INVISIBLE);
         DancingNote dancingNote = new DancingNote(activity);
         dancingNote.move();
         Button button = (Button) activity.findViewById(R.id.nextLevel);
@@ -160,8 +163,14 @@ public class GameEngine {
                     numLevel++;
                     niveau.restart(numLevel);
                 }
+
             }
         });
+        if(!(numLevel < nameNextNotes.size() - 1 && !(editionMode))){
+            congrats.setVisibility(View.VISIBLE);
+            Button niveauSuivant=activity.findViewById(R.id.nextLevel);
+            niveauSuivant.setVisibility(View.INVISIBLE);
+        }
     }
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
