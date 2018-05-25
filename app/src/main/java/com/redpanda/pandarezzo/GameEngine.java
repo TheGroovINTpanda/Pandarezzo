@@ -178,11 +178,11 @@ public class GameEngine {
 
     private void endLevel() {
         activity.setContentView(R.layout.final_note_dancing);
-//        etoiles();
+        etoiles();
         TextView congrats=activity.findViewById(R.id.congrats);
         congrats.setVisibility(View.INVISIBLE);
-        DancingNote dancingNote = new DancingNote(activity);
-        dancingNote.move();
+//        DancingNote dancingNote = new DancingNote(activity);
+//        dancingNote.move();
         Button button = (Button) activity.findViewById(R.id.nextLevel);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
