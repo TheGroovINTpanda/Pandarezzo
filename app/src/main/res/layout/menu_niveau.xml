@@ -5,4 +5,14 @@
     android:background="@drawable/ciel_etoile"
     >
 
+    <Button
+        android:id="@+id/niveau1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparant"
+        android:fontFamily="@font/bd_cartoon_shout"
+        android:text="Niveau 1"
+        android:textSize="42dp"
+        android:textColor="@color/blanc_antique"/>
+
 </ScrollView>
