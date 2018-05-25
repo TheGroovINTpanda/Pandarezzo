@@ -145,7 +145,7 @@ public class GameEngine {
             ref=R.drawable.etoiles_1;
         }
         else {
-            ref=R.drawable.etoiles_vide;
+            ref=R.drawable.etoiles_vides;
         }
         ImageView v = activity.findViewById(R.id.etoiles);
         v.setImageResource(ref);
