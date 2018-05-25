@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Niveau extends AppCompatActivity{
 
+    ArrayList<String[]> niveaux = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +17,7 @@ public class Niveau extends AppCompatActivity{
 
         /** Renseigner les portées des niveau. */
 
-        ArrayList<String[]> niveaux = new ArrayList<>();
+
 
         String[] level0 = {"Mi", "Mi", "Fa", "Sol", "La", "Ré", "Do"};
         String[] level1 = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
@@ -43,5 +44,10 @@ public class Niveau extends AppCompatActivity{
         intent.putExtra("level",numLevel);
         startActivity(intent);
     }
+
+    public String[] getLevelPlayed(int indiceLevelPlayed) {
+        return niveaux.get(indiceLevelPlayed);
+    }
+
 }
 
