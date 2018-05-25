@@ -20,7 +20,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 1"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             android:layout_marginTop="40dp"
             />
 
@@ -33,7 +33,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 2"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
         <Button
@@ -45,7 +45,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 3"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
         <Button
@@ -57,7 +57,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 4"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
         <Button
@@ -69,7 +69,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 5"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
         <Button
@@ -81,7 +81,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 6"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
         <Button
@@ -93,7 +93,7 @@
             android:fontFamily="@font/bd_cartoon_shout"
             android:text="Niveau 7"
             android:textSize="42sp"
-            android:textColor="@color/blanc_antique"
+            android:textColor="@color/rougeorange"
             />
 
 
