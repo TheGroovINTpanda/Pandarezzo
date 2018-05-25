@@ -2,6 +2,8 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 import android.widget.ImageView;
 
 public class Note {
@@ -39,43 +41,44 @@ public class Note {
      * @param position Position de la note sur la portée.
      */
     public void setPosition(int position, boolean editionMode){
-        int pas_latteral =  120; //Eccart entre deux notes sur la portée.
+        int pas_latteral =  40; //Eccart entre deux notes sur la portée.
         int pas_horrizontal = 40;
         int origine_latteral = 0;
+        int origine_horrizontal = 0;
         if (editionMode) {
-            pas_latteral =  120; //Eccart entre deux notes sur la portée.
-            pas_horrizontal = 220;
-            origine_latteral = 100;
+            pas_latteral =  40; //Eccart entre deux notes sur la portée.
+            pas_horrizontal = 102;
+            origine_latteral = 42;
         }
         int xNote = origine_latteral + position * pas_latteral;
-        int yNode = 0;             //Hauteur caractéristique d'une note.
+        int yNode = origine_horrizontal;             //Hauteur caractéristique d'une note.
         switch (name){
             case "Do":
-                yNode = 0 + pas_horrizontal;
+                yNode += -26 +  pas_horrizontal;
                 break;
             case "Ré":
-                yNode = -20+ pas_horrizontal;
+                yNode += -35+ pas_horrizontal;
                 break;
             case "Mi":
-                yNode = -36+ pas_horrizontal;
+                yNode += -40+ pas_horrizontal;
                 break;
             case "Fa":
-                yNode = -50 + pas_horrizontal;
+                yNode += -46 + pas_horrizontal;
                 break;
             case "Sol":
-                yNode = -70 + pas_horrizontal;
+                yNode += -52 + pas_horrizontal;
                 break;
             case "La":
-                yNode = -83 + pas_horrizontal;
+                yNode += -57 + pas_horrizontal;
                 break;
             case "Si":
-                yNode = -100 + pas_horrizontal;
+                yNode += -62 + pas_horrizontal;
                 break;
         }
         setX(xNote);
-        noteView.setX(xNote);
+        noteView.setX(convertDpToPixel(xNote));
         setY(yNode);
-        noteView.setY(yNode);
+        noteView.setY(convertDpToPixel(yNode));
     }
 
 
@@ -126,6 +129,18 @@ public class Note {
     public void getPosition(){
         System.out.println(noteView.getX());
         System.out.println(noteView.getY());
+    }
+
+    public static float convertPixelsToDp(float px){
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        float dp = px / (metrics.densityDpi / 160f);
+        return Math.round(dp);
+    }
+
+    public static float convertDpToPixel(float dp){
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return Math.round(px);
     }
 
     @Override

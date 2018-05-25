@@ -25,7 +25,7 @@ public class LevelEditor extends AppCompatActivity{
         String[] level = {"Do","Do","Do","Do","Do","Do","Do",};
         niveaux.add(level);
 
-        GameEngine engine = new GameEngine(this, niveaux, true);
+        GameEngine engine = new GameEngine(null,this, niveaux, true, 0);
 
 
 //TODO Redimentionner les notes et les implémenter
