@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -125,14 +126,25 @@ public class GameEngine {
 
     /**
     * Permet de récupérer l'image correspondant à la performance de l'utilisateur à afficher sur
-     * le layout de fin de niveau à savoir 1, 2 ou 3 étoiles selon que l'utilisateur est fait respectivement
+     * le layout de fin de niveau à savoir 1, 2 ou 3 étoiles selon que l'utilisateur ait fait respectivement
      * aucune, plus d'une ou plus de trois fautes au cours du niveau
     */
     public void etoiles(){
-        if (nberreur==0){ }
-        if (nberreur<=3){}
-        if (nberreur<=5){}
-        else {}
+        int ref;
+        if (nberreur==0){
+            ref= R.drawable.etoiles_3;
+        }
+        if (nberreur<=3){
+            ref=R.drawable.etoiles_2;
+        }
+        if (nberreur<=5){
+            ref=R.drawable.etoiles_1;
+        }
+        else {
+            ref=R.drawable.etoiles_vide;
+        }
+        ImageView v = activity.findViewById(R.id.etoiles);
+        v.setImageResource(ref);
     }
 
     /**
