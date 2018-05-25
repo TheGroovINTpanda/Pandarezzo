@@ -2,9 +2,9 @@ package com.redpanda.pandarezzo;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,6 +22,7 @@ public class GameEngine {
     private boolean editionMode;
     private int noteToComplete; //Nombre de note pour compléter le morceau.
     private int numLevel; //Numéro du niveau en cours
+    private int nberreur; //score en cours
 
     /**
      Context sert à get l'état actuel de l'application (le contexte dans lequel cette interface
@@ -38,6 +39,7 @@ public class GameEngine {
         this.editionModeActive = editionModeActive;
         this.editionMode = false;
         this.numLevel=numLevel;
+        this.nberreur=0;
         init(editionModeActive);
     }
 
@@ -117,11 +119,36 @@ public class GameEngine {
                     System.out.print("Error");
                     reInit();
                     panda.animate(false);
+                    nberreur+=1;
                 }
-            } else {
+            }
+            if (ip == getNextNotes().size()){
                 endLevel();
             }
         }
+    }
+
+    /**
+    * Permet de récupérer l'image correspondant à la performance de l'utilisateur à afficher sur
+     * le layout de fin de niveau à savoir 1, 2 ou 3 étoiles selon que l'utilisateur ait fait respectivement
+     * aucune, plus d'une ou plus de trois fautes au cours du niveau
+    */
+    public void etoiles(){
+        int ref;
+        if (nberreur==0){
+            ref= R.drawable.etoiles_3;
+        }
+        else if (nberreur<=3){
+            ref=R.drawable.etoiles_2;
+        }
+        else if (nberreur<=5){
+            ref=R.drawable.etoiles_1;
+        }
+        else {
+            ref=R.drawable.etoiles_vides;
+        }
+        ImageView v = activity.findViewById(R.id.etoiles);
+        v.setImageResource(ref);
     }
 
     /**
@@ -151,10 +178,11 @@ public class GameEngine {
 
     private void endLevel() {
         activity.setContentView(R.layout.final_note_dancing);
+        etoiles();
         TextView congrats=activity.findViewById(R.id.congrats);
         congrats.setVisibility(View.INVISIBLE);
-        DancingNote dancingNote = new DancingNote(activity);
-        dancingNote.move();
+//        DancingNote dancingNote = new DancingNote(activity);
+//        dancingNote.move();
         Button button = (Button) activity.findViewById(R.id.nextLevel);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
