@@ -16,7 +16,10 @@ public class DancingNote {
     private AnimationSet animSet;
 
 
-
+    /**
+     * Constructeur de DancingNote
+     * @param activity
+     */
     public DancingNote(Activity activity){
         this.noteView = activity.findViewById(R.id.dancingNote);
         noteView.setBackgroundResource(R.drawable.dancing_note);
@@ -28,12 +31,20 @@ public class DancingNote {
         animSet.addAnimation(rotateNote);
     }
 
-
+    /**
+     * Cette méthode fait en sorte que la note tourne autour d'elle-même et que l'animation de
+     * l'applaudissement commence
+      */
     public void move(){
         noteView.startAnimation(animSet);
         dancingNote.start();
     }
 
+    /**
+     * Cette méthode joue les sons du niveau quand celui-ci est terminé (en même temps que la note s'anime)
+     * @param levelPlayed
+     * @param activity
+     */
     public void playSound(String[] levelPlayed,Activity activity){
         try {
             for (String note : levelPlayed) {
@@ -118,6 +129,10 @@ public class DancingNote {
         }
     }
 
+    /**
+     * Cette méthode play le son d'applaudissement quand la note est animée
+     * @param activity
+     */
     public void applaude(Activity activity){
         MediaPlayer applaude = MediaPlayer.create(activity.getApplicationContext(),R.raw.applaude);
         applaude.start();

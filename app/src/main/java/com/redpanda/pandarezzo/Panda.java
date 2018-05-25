@@ -9,6 +9,10 @@ public class Panda  {
     private AnimationDrawable pandaAnimation;
     private boolean wasCorrectBefore;
 
+    /**
+     * Constructeur de la classe Panda
+     * @param activity
+     */
     public Panda(Activity activity){
         this.pandaView = activity.findViewById(R.id.pandaMignon);
         this.wasCorrectBefore=false;
@@ -16,6 +20,10 @@ public class Panda  {
         pandaAnimation = (AnimationDrawable) pandaView.getBackground();
     }
 
+    /**
+     * cette méthode anime le panda : il lève les bras
+     * @param correct
+     */
     public void animate(boolean correct) {
         if(correct && !(wasCorrectBefore)) {
             pandaAnimation.stop();
