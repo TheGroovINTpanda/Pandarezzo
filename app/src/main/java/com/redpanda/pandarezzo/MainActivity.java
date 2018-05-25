@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                        Intent intent = new Intent(MainActivity.this,
-                                Niveau.class);
-                        startActivity(intent);
+                        setContentView(R.layout.menu_niveau);
+//                        Intent intent = new Intent(MainActivity.this,
+//                                Niveau.class);
+//                        startActivity(intent);
                         return false;
                     }
                 });
