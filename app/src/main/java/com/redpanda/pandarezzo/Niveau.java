@@ -21,9 +21,19 @@ public class Niveau extends AppCompatActivity{
         String[] level0 = {"Mi", "Mi", "Fa", "Sol", "La", "Ré", "Do"};
         String[] level1 = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
         String[] level2 = {"Mi", "Ré", "Mi", "Si", "Ré", "Do", "La"};
+        String[] level3 = {"Do", "Si", "La", "Sol", "Mi", "Do", "Si"};
+        String[] level4 = {"Do", "Do", "Fa", "Fa", "La", "La", "Sol"};
+        String[] level5 = {"Mi", "Mi", "Mi", "Do", "Sol", "Mi", "Do"};
+        String[] level6 = {"Ré", "Mi", "Fa", "Do", "La", "Sol", "Mi"};
         niveaux.add(level0);
         niveaux.add(level1);
         niveaux.add(level2);
+        niveaux.add(level3);
+        niveaux.add(level4);
+        niveaux.add(level5);
+        niveaux.add(level6);
+
+
 
         GameEngine engine = new GameEngine( this,this, niveaux, false, numLevel);
 
