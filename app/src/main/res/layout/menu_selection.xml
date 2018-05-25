@@ -4,15 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/ciel_menu">
 
     <Button
         android:id="@+id/niveaux"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="68dp"
+        android:backgroundTint="@color/transparant"
+        android:fontFamily="@font/bd_cartoon_shout"
         android:text="Niveaux"
+        android:textColor="@color/rougeorange"
+        android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +25,13 @@
         android:id="@+id/editeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/transparant"
+        android:fontFamily="@font/bd_cartoon_shout"
         android:text="Editeur"
+        android:textColor="@color/rougeorange"
+        android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/niveaux" />
 
@@ -30,9 +39,13 @@
         android:id="@+id/resources"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/transparant"
+        android:fontFamily="@font/bd_cartoon_shout"
         android:text="Cours"
+        android:textColor="@color/rougeorange"
+        android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editeur" />
 </android.support.constraint.ConstraintLayout>
