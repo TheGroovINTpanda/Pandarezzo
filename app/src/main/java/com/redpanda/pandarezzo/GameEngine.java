@@ -181,8 +181,14 @@ public class GameEngine {
         etoiles();
         TextView congrats=activity.findViewById(R.id.congrats);
         congrats.setVisibility(View.INVISIBLE);
-//        DancingNote dancingNote = new DancingNote(activity);
-//        dancingNote.move();
+        DancingNote dancingNote = new DancingNote(activity);
+        dancingNote.move();
+        dancingNote.applaude(activity);
+        if (!(numLevel < nameNextNotes.size() - 1 && !(editionMode))) {
+            congrats.setVisibility(View.VISIBLE);
+            Button niveauSuivant = activity.findViewById(R.id.nextLevel);
+            niveauSuivant.setVisibility(View.GONE);
+        }
         Button button = (Button) activity.findViewById(R.id.nextLevel);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,12 +200,10 @@ public class GameEngine {
 
             }
         });
-        if(!(numLevel < nameNextNotes.size() - 1 && !(editionMode))){
-            congrats.setVisibility(View.VISIBLE);
-            Button niveauSuivant=activity.findViewById(R.id.nextLevel);
-            niveauSuivant.setVisibility(View.GONE);
-        }
     }
+
+
+
 
     /** Gère la prochaine note à jouer. Permet de concevoir un niveau. */
 
@@ -229,5 +233,7 @@ public class GameEngine {
     public ArrayList<Note> getNextNotes() {
         return nextNotes;
     }
+
+
 
 }
