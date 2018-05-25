@@ -45,7 +45,7 @@
         android:layout_height="110dp"
         android:layout_marginBottom="384dp"
         android:layout_marginStart="52dp"
-        android:src="@drawable/etoiles_vide"
+        android:src="@drawable/etoiles_vides"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
