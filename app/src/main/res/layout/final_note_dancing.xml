@@ -9,20 +9,21 @@
 
     <Button
         android:id="@+id/nextLevel"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="212dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@color/transparant"
         android:text="Niveau suivant"
+        android:textColor="@color/rougeorange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
-
+        app:layout_constraintVertical_bias="1.0" />
     <TextView
         android:id="@+id/congrats"
         android:layout_width="350dp"
@@ -39,7 +40,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/dancingNote"
         android:layout_width="215dp"
