@@ -3,11 +3,17 @@ package com.redpanda.pandarezzo;
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
 public class DancingNote {
     private ImageView noteView;
     private AnimationDrawable dancingNote;
+    private RotateAnimation rotateNote;
+    private AnimationSet animSet;
 
 
 
@@ -15,10 +21,16 @@ public class DancingNote {
         this.noteView = activity.findViewById(R.id.dancingNote);
         noteView.setBackgroundResource(R.drawable.dancing_note);
         dancingNote= (AnimationDrawable) noteView.getBackground();
+        animSet=new AnimationSet(true);
+        rotateNote=new RotateAnimation(0f,360f,Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateNote.setDuration(750);
+        rotateNote.setInterpolator(new DecelerateInterpolator());
+        animSet.addAnimation(rotateNote);
     }
 
 
     public void move(){
+        noteView.startAnimation(animSet);
         dancingNote.start();
     }
 
