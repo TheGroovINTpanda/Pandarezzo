@@ -121,7 +121,8 @@ public class GameEngine {
                     panda.animate(false);
                     nberreur+=1;
                 }
-            } else {
+            }
+            if (ip == getNextNotes().size()){
                 endLevel();
             }
         }
