@@ -138,10 +138,10 @@ public class GameEngine {
         if (nberreur==0){
             ref= R.drawable.etoiles_3;
         }
-        else if (nberreur<=3){
+        else if (nberreur<3){
             ref=R.drawable.etoiles_2;
         }
-        else if (nberreur<=5){
+        else if (nberreur<5){
             ref=R.drawable.etoiles_1;
         }
         else {
