@@ -169,7 +169,7 @@ public class GameEngine {
         if(!(numLevel < nameNextNotes.size() - 1 && !(editionMode))){
             congrats.setVisibility(View.VISIBLE);
             Button niveauSuivant=activity.findViewById(R.id.nextLevel);
-            niveauSuivant.setVisibility(View.INVISIBLE);
+            niveauSuivant.setVisibility(View.GONE);
         }
     }
 
